@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script src="https://unpkg.com/react-markdown/umd/react-markdown.min.js"></script>
+    </head>
+    
+        <div class="headsup"></div>
+        <div id="navbar" class="navbar"></div>
+
+        <script type="text/babel">
+
+            function Redirect(url){
+                window.location.href = url;
+            }
+
+            function CreateNavBar() {
+                var w = window.innerWidth;
+                var h = window.innerHeight;
+
+                var buttonIndent = w/200
+                var logoIndent = w/3
+                var logoHeight = h/10
+
+                return(
+                    <div style={{"display": "flex"}}>
+                        <div style={{"paddingRight":logoIndent}}>
+                            <a href="https://google.com/"> {/* Replace with URL to main page */}
+                                <img id="logo" src="./assets/logo_transparent.png" className="logo"  />
+                            </a>
+                        </div>
+
+                        <div style={{"paddingRight":buttonIndent,"height":logoHeight}}>
+                            <button className="navbar_button" onClick={() => Redirect("index.html")}>
+                                Main
+                            </button>                        
+                        </div>
+                        <div style={{"paddingRight":buttonIndent}}>
+                            <button className="navbar_button"  onClick={() => Redirect("projects.html")}>
+                                Projects
+                            </button>
+                        </div>
+                        <div style={{"paddingRight":buttonIndent}}>
+                            <button className="navbar_button" onClick={() => Redirect()}>
+                                Experience
+                            </button>
+                        </div>
+                        <div style={{"paddingRight":buttonIndent}}>
+                            <button className="navbar_button" onClick={() => Redirect("https://www.samaritans.org/scotland/how-we-can-help/contact-samaritan/?utm_source=google&utm_medium=organic&utm_campaign=onebox")}>
+                                Contact
+                            </button>
+                        </div>
+                        <div style={{"paddingRight":buttonIndent}}>
+                            <button className="navbar_button" onClick={() => Redirect()}>
+                                Appearances
+                            </button>
+                        </div>
+                        <div style={{"paddingRight":buttonIndent}}>
+                            <button className="navbar_button" onClick={() => Redirect()}>
+                                Tools
+                            </button>
+                        </div>
+                    </div>
+                    )
+            };
+            
+            ReactDOM.render(
+                <CreateNavBar />,
+                document.getElementById("navbar")
+            );
+            //background-color: #11191c;
+
+        </script>
+        <style>
+            .headsup{
+                height: 1vh;
+                width: 100%;
+                background-color: #0000009d;
+            }
+
+            .logo{
+                --logoHeight: 10vh;
+                height:var(--logoHeight);
+                position:fixed;
+            }
+
+            .navbar {
+                float: center;
+                padding: 2px 2px;
+                overflow: hidden;
+                text-align: center;
+                font-size: 25px;
+            }
+            .navbar:hover{
+                background-color: #0000001a;
+            }
+            
+            .navbar_button {
+                --logoHeight: 10vh;
+                display: inline-block;
+                border: none;
+                cursor: pointer;
+                font-weight: 400;
+                border-radius: 4px;
+                font-size: 20px;
+                height: var(--logoHeight);
+                background-color: #0000000d;
+                color: #CCCCCC;
+                padding: 0 20px;
+            }
+            .navbar_button:hover{
+                background-color: #0000009a;
+            }
+
+            
+        </style>
+
+    
+
+    <body style="background-color: #2C2C2C">
+        <div class="background"> </div>
+
+        <div class="body" id="body"></div>
+        <script type="text/babel">
+
+            function RenderBody() {
+                
+                return(
+                    <div style={{position: "relative"}}>
+                        <div class="introContainer"> 
+                            <h1>
+                                Gracjan Blazejowski
+                            </h1>
+                            <h3>
+                               <i> Software Developer </i>
+                            </h3>
+                            <p style={{textAlign:"center"}}>
+                                Currently involved in collaborative development of a video game as a leader of a small team. Tenacious and determined
+                                IT professional with experience in several programming languages. Skilled in object oriented programming, version control
+                                systems and continuous integration. First hand experience in project management, SCRUM framework and Agile methodology.
+                                Embedded programming enthusiast. Future backend engineer.
+                            </p>
+                        </div>
+                        <div class="photoContainer">
+                            <img src="./assets/turtle.png" className="self_photo" /> <br />
+                            <img src="./assets/icons/li.svg" className="icons"/><a href="https://www.linkedin.com/in/gracjan-blazejowski-97b935233/">Gracjan Blazejowski</a> <br />
+                            <img src="./assets/icons/gh.svg" className="icons"/><a href="https://github.com/Ryboster">AmazonPython</a> <br />
+                            <img src="./assets/icons/em.png" className="icons"/><a href="mailto:gracjanblazejowski1@gmail.com">gracjanblazejowski1@gmail.com</a> <br />
+                        </div>
+                    </div>
+                )
+            }
+            ReactDOM.render(
+                <RenderBody />,
+                document.getElementById("body")
+            )
+        </script>    
+    </body>
+    <style>
+        .body{
+            float:right;
+            height:calc(100vh);
+            width:calc(85vw);
+            background-color: #0000000d;
+        }
+        .body:hover{
+            background-color: #0000001a;
+        }
+
+
+        .background {
+            float:left;
+            height:calc(100vh);
+            width:calc(10vw);
+            background-color:#CCCCCC;
+        }
+
+
+        .introContainer{
+            width:calc(70vw);
+            text-align: center;
+            float: left;
+            color: #CCCCCC;
+        }
+        .introContainer p{
+            padding-left: 10vw;
+            padding-right: 10vw;
+        }
+
+        .photoContainer{
+            width:calc(10vw);
+            height:calc(100vh);
+            text-align: left;
+            float: right;
+            padding-right:5vw;
+            padding-top: 5vh;
+        }
+
+        .self_photo {
+            height:calc(30vh);
+        }
+        .icons {
+            height:1vh;
+            float: right;
+        }
+        .photoContainer a{
+            font-size: 1vh;
+            float: left;
+            color: #CCCCCC;
+            text-align: left;
+        }
+
+    </style>
+
+    <footer>
+        <div id="footer" class="footer">x</div>
+        <style>
+            .footer {
+                background-color: #4dbedf;
+                position: fixed;
+                bottom: 0;
+                width: 100vw;
+            }
+        </style>
+        <script type="text/babel">
+            function CreateFooter() {
+                return(
+                    <div style={{textAlign: "right", paddingRight: "50px"}}>
+                        2023
+                    </div>
+                )
+            }
+            ReactDOM.render(
+                <CreateFooter />,
+                document.getElementById("footer")
+            )
+        </script>
+
+    </footer>
+</html>
+
