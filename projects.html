@@ -1,70 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
+        
+        
         <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
         <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
         <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
         <script src="https://unpkg.com/react-markdown/umd/react-markdown.min.js"></script>
+        <script type="text/babel" src="./navBar.js"></script>
+        <script type="text/javascript" src="./functions.js"></script>
+
     </head>
         <div class="headsup"></div>
         <div id="navbar" class="navbar"></div>
 
         <script type="text/babel">
 
-            function Redirect(url){
-                window.location.href = url;
-            }
-
-            function CreateNavBar() {
-                var w = window.innerWidth;
-                var h = window.innerHeight;
-
-                var buttonIndent = w/200
-                var logoIndent = w/3
-                var logoHeight = h/10
-
-                return(
-                    <div style={{"display": "flex"}}>
-                        <div style={{"paddingRight":logoIndent}}>
-                            <a href="https://google.com/"> {/* Replace with URL to main page */}
-                                <img id="logo" src="./assets/logo_transparent.png" className="logo"  />
-                            </a>
-                        </div>
-
-                        <div style={{"paddingRight":buttonIndent,"height":logoHeight}}>
-                            <button className="navbar_button" onClick={() => Redirect("index.html")}>
-                                Main
-                            </button>                        
-                        </div>
-                        <div style={{"paddingRight":buttonIndent}}>
-                            <button className="navbar_button"  onClick={() => Redirect("projects.html")}>
-                                Projects
-                            </button>
-                        </div>
-                        <div style={{"paddingRight":buttonIndent}}>
-                            <button className="navbar_button" onClick={() => Redirect()}>
-                                Experience
-                            </button>
-                        </div>
-                        <div style={{"paddingRight":buttonIndent}}>
-                            <button className="navbar_button" onClick={() => Redirect()}>
-                                Contact
-                            </button>
-                        </div>
-                        <div style={{"paddingRight":buttonIndent}}>
-                            <button className="navbar_button" onClick={() => Redirect()}>
-                                Appearances
-                            </button>
-                        </div>
-                        <div style={{"paddingRight":buttonIndent}}>
-                            <button className="navbar_button" onClick={() => Redirect()}>
-                                Tools
-                            </button>
-                        </div>
-                    </div>
-                    )
-            };
-            
             ReactDOM.render(
                 <CreateNavBar />,
                 document.getElementById("navbar")
@@ -119,6 +70,10 @@
     
 
     <body style="background-color: #2C2C2C">
+        <script type="text/javascript">
+
+        </script>
+
         <div class="background"> </div>
 
         <div class="body" id="body"></div>
