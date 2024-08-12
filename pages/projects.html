@@ -87,6 +87,7 @@
             )
         </script>    
     </body>
+    
     <style>
         .body{
             float:right;
@@ -99,19 +100,18 @@
         }
 
         .table_picture{
-            float: right;
-            padding-left: 10vw;
+            width: 10vw;
+            height: 10vh;
+            float: left;
         }
         .table_description{
             font-size:12px;
-            max-width: 50vw;
+            width: 50vw;
+            height: 10vh;
         }
         .table_title {
-            max-width: 30vw;
-            padding-right: 5vw;
-            padding-left: 2vw;
-            width: 5vw;
-            height: 5vh;
+            width: 15vw;
+            height: 10vh;
         }
 
         .background {
@@ -119,6 +119,10 @@
             height:calc(100vh);
             width:calc(10vw);
             background-color:#CCCCCC;
+        }
+
+        .introContainer tr:hover {
+            background-color: #888888;
         }
 
 
@@ -129,11 +133,12 @@
         }
 
         .introContainer img{
-            height: 20vh;
+            height: 10vh;
+            width: 10vw;
+            padding-top: 5vh;
         }
         .introContainer a{
             color: #CCCCCC;
-            float: left;
             text-decoration: none;
         }
 
