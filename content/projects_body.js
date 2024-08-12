@@ -25,23 +25,25 @@ function RenderBody() {
                                     </tr>          
                                     </a>
 
-                                    <a href="https://github.com/Ryboster/WizLights-Remote-Python"> 
+                                    <a href="https://github.com/Ryboster/WiZDriver"> 
                                     <tr>
                                         <td class="table_title"> Infrared controlled LED </td>
                                         <td class="table_description"> smart lights made more convenient with infrared.</td>
-                                        <td class="table_picture"><img src="../assets/active_recall_trainer.png" /></td>
+                                        <td class="table_picture"><img src="../assets/ir_wiz.png" /></td>
 
                                     </tr>
                                     </a>
 
-                                    <a href="https://github.com/Ryboster/reaction_role_discord_selfbot"> 
+                                    <a href="https://github.com/Ryboster/reactionrole_discord_bot"> 
                                     <tr>
-                                        <td class="table_title"> Moderation bot for Discord </td>
-                                        <td class="table_description"> Moderation made simpler with Python </td>
-                                        <td class="table_picture"><img src="../assets/active_recall_trainer.png" /></td>
+                                        <td class="table_title"> Reactionrole bot for Discord </td>
+                                        <td class="table_description"> Role assignment automation for your discord server </td>
+                                        <td class="table_picture"><img src="../assets/reactionrole_bot.png" /></td>
 
                                     </tr>
                                     </a>
+
+
                             </table>       
                         </div>
                     </div>

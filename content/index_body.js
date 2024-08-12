@@ -17,7 +17,7 @@ function RenderBody() {
                             </p>
                         </div>
                         <div class="photoContainer">
-                            <img src="../assets/turtle.png" className="self_photo" /> <br />
+                            <img src="../assets/handsome_man.png" className="self_photo" /> <br />
                             <img src="../assets/icons/li.svg" className="icons"/><a href="https://www.linkedin.com/in/gracjan-blazejowski-97b935233/">Gracjan Blazejowski</a> <br />
                             <img src="../assets/icons/gh.svg" className="icons"/><a href="https://github.com/Ryboster">AmazonPython</a> <br />
                             <img src="../assets/icons/em.png" className="icons"/><a href="mailto:gracjanblazejowski1@gmail.com">gracjanblazejowski1@gmail.com</a> <br />
