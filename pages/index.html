@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
-        
         <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
         <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
         <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
         <script src="https://unpkg.com/react-markdown/umd/react-markdown.min.js"></script>
-        <script type="text/babel" src="./navBar.js"></script>
-        <script type="text/javascript" src="./functions.js"></script>
-
+        
+        <script type="text/javascript" src="./functions.js"> </script>
+        <script type="text/babel" src="../UI/navBar.js"></script>
+        <script type="text/babel" src="../UI/footer.js"></script>
+        <script type="text/babel" src="../content/index_body.js"></script>
     </head>
+    
         <div class="headsup"></div>
         <div id="navbar" class="navbar"></div>
 
         <script type="text/babel">
-
+            
             ReactDOM.render(
                 <CreateNavBar />,
                 document.getElementById("navbar")
@@ -70,40 +71,12 @@
     
 
     <body style="background-color: #2C2C2C">
-        <script type="text/javascript">
-
-        </script>
-
         <div class="background"> </div>
 
         <div class="body" id="body"></div>
         <script type="text/babel">
 
-            function RenderBody() {
-                
-                return(
-                    <div style={{position: "relative"}}>
-                        <div class="introContainer">
-                            <table>
-                                <a href="https://google.com/">
-                                    <tr>
-                                        <td class="table_title">Scattered Lands </td>
-                                        <td class="table_description">Video Game (in progress) </td>
-                                        <td class="table_picture"><img src="./assets/scattered_lands.png" /></td>
-                                    </tr>
-                                </a>
-                                <a href="https://github.com/Ryboster/Active-Recall-Trainer">
-                                    <tr>
-                                        <td class="table_title">Active Recall Trainer </td>
-                                        <td class="table_description">Software designed to train active recall </td>
-                                        <td class="table_picture"><img src="./assets/active_recall_trainer.png" /></td>
-                                    </tr>
-                                </a>               
-                            </table>       
-                        </div>
-                    </div>
-                )
-            }
+            
             ReactDOM.render(
                 <RenderBody />,
                 document.getElementById("body")
@@ -121,21 +94,6 @@
             background-color: #0000001a;
         }
 
-        .table_picture{
-            float: right;
-            padding-left: 10vw;
-        }
-        .table_description{
-            font-size:12px;
-            max-width: 50vw;
-        }
-        .table_title {
-            max-width: 30vw;
-            padding-right: 5vw;
-            padding-left: 2vw;
-            width: 5vw;
-            height: 5vh;
-        }
 
         .background {
             float:left;
@@ -146,18 +104,37 @@
 
 
         .introContainer{
-            width:calc(85vw);
+            width:calc(70vw);
             text-align: center;
+            float: left;
             color: #CCCCCC;
+        }
+        .introContainer p{
+            padding-left: 10vw;
+            padding-right: 10vw;
         }
 
-        .introContainer img{
-            height: 20vh;
+        .photoContainer{
+            width:calc(10vw);
+            height:calc(100vh);
+            text-align: left;
+            float: right;
+            padding-right:5vw;
+            padding-top: 5vh;
         }
-        .introContainer a{
-            color: #CCCCCC;
+
+        .self_photo {
+            height:calc(30vh);
+        }
+        .icons {
+            height:1vh;
+            float: right;
+        }
+        .photoContainer a{
+            font-size: 1vh;
             float: left;
-            text-decoration: none;
+            color: #CCCCCC;
+            text-align: left;
         }
 
     </style>
@@ -173,13 +150,7 @@
             }
         </style>
         <script type="text/babel">
-            function CreateFooter() {
-                return(
-                    <div style={{textAlign: "right", paddingRight: "50px"}}>
-                        2023
-                    </div>
-                )
-            }
+            
             ReactDOM.render(
                 <CreateFooter />,
                 document.getElementById("footer")

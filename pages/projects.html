@@ -5,16 +5,18 @@
         <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
         <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
         <script src="https://unpkg.com/react-markdown/umd/react-markdown.min.js"></script>
-        
-        <script type="text/javascript" src="./functions.js"> </script>
-        <script type="text/babel" src="./navBar.js"></script>
+
+        <script type="text/babel" src="../UI/navBar.js"></script>
+        <script type="text/javascript" src="../functions.js"></script>
+        <script type="text/babel" src="../UI/footer.js"></script>
+        <script type="text/babel" src="../content/projects_body.js"></script>
+
     </head>
-    
         <div class="headsup"></div>
         <div id="navbar" class="navbar"></div>
 
         <script type="text/babel">
-            
+
             ReactDOM.render(
                 <CreateNavBar />,
                 document.getElementById("navbar")
@@ -69,38 +71,16 @@
     
 
     <body style="background-color: #2C2C2C">
+        <script type="text/javascript">
+
+        </script>
+
         <div class="background"> </div>
 
         <div class="body" id="body"></div>
         <script type="text/babel">
 
-            function RenderBody() {
-                
-                return(
-                    <div style={{position: "relative"}}>
-                        <div class="introContainer"> 
-                            <h1>
-                                Gracjan Blazejowski
-                            </h1>
-                            <h3>
-                               <i> Software Developer </i>
-                            </h3>
-                            <p style={{textAlign:"center"}}>
-                                Currently involved in collaborative development of a video game as a leader of a small team. Tenacious and determined
-                                IT professional with experience in several programming languages. Skilled in object oriented programming, version control
-                                systems and continuous integration. First hand experience in project management, SCRUM framework and Agile methodology.
-                                Embedded programming enthusiast. Future backend engineer.
-                            </p>
-                        </div>
-                        <div class="photoContainer">
-                            <img src="./assets/turtle.png" className="self_photo" /> <br />
-                            <img src="./assets/icons/li.svg" className="icons"/><a href="https://www.linkedin.com/in/gracjan-blazejowski-97b935233/">Gracjan Blazejowski</a> <br />
-                            <img src="./assets/icons/gh.svg" className="icons"/><a href="https://github.com/Ryboster">AmazonPython</a> <br />
-                            <img src="./assets/icons/em.png" className="icons"/><a href="mailto:gracjanblazejowski1@gmail.com">gracjanblazejowski1@gmail.com</a> <br />
-                        </div>
-                    </div>
-                )
-            }
+            
             ReactDOM.render(
                 <RenderBody />,
                 document.getElementById("body")
@@ -118,6 +98,21 @@
             background-color: #0000001a;
         }
 
+        .table_picture{
+            float: right;
+            padding-left: 10vw;
+        }
+        .table_description{
+            font-size:12px;
+            max-width: 50vw;
+        }
+        .table_title {
+            max-width: 30vw;
+            padding-right: 5vw;
+            padding-left: 2vw;
+            width: 5vw;
+            height: 5vh;
+        }
 
         .background {
             float:left;
@@ -128,37 +123,18 @@
 
 
         .introContainer{
-            width:calc(70vw);
+            width:calc(85vw);
             text-align: center;
-            float: left;
             color: #CCCCCC;
         }
-        .introContainer p{
-            padding-left: 10vw;
-            padding-right: 10vw;
-        }
 
-        .photoContainer{
-            width:calc(10vw);
-            height:calc(100vh);
-            text-align: left;
-            float: right;
-            padding-right:5vw;
-            padding-top: 5vh;
+        .introContainer img{
+            height: 20vh;
         }
-
-        .self_photo {
-            height:calc(30vh);
-        }
-        .icons {
-            height:1vh;
-            float: right;
-        }
-        .photoContainer a{
-            font-size: 1vh;
-            float: left;
+        .introContainer a{
             color: #CCCCCC;
-            text-align: left;
+            float: left;
+            text-decoration: none;
         }
 
     </style>
@@ -174,13 +150,7 @@
             }
         </style>
         <script type="text/babel">
-            function CreateFooter() {
-                return(
-                    <div style={{textAlign: "right", paddingRight: "50px"}}>
-                        2023
-                    </div>
-                )
-            }
+            
             ReactDOM.render(
                 <CreateFooter />,
                 document.getElementById("footer")
