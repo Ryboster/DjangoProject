@@ -24,11 +24,7 @@
 
         </script>
         <style>
-            .headsup{
-                height: 1vh;
-                width: 100%;
-                background-color: #0000009d;
-            }
+
 
             .logo{
                 --logoHeight: 10vh;
@@ -82,7 +78,48 @@
             )
         </script>    
     </body>
+
     <style>
+        /* Header */
+        .Header {
+            margin-top: 5vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+        .Header h1 {
+            float: left;
+            margin-left: 3vw;
+
+        }
+        .Header h2 {
+            font-weight: normal;
+            float: right;
+            margin-right: 3vw;
+        }
+        .subHeader {
+            display: block;
+            margin-left: 3vw;
+            margin-right: 3vw;
+            height: auto;
+            overflow:hidden;
+        }
+
+        .subHeader h3 {
+            float: left;
+        }
+        .subHeader hr {
+            float:left;
+            width: calc(61vw);
+        }
+
+
+
+    </style>
+
+    <style>
+        /* Body */
         .body{
             float:right;
             height:calc(100vh);
@@ -90,7 +127,10 @@
             background-color: #0000000d;
         }
 
+    </style>
 
+    <style>
+        /* Background */
         .background {
             float:left;
             height:calc(100vh);
@@ -98,47 +138,81 @@
             background-color:#CCCCCC;
         }
 
+    </style>
 
+
+    <style>
+        /* Intro */
         .introContainer{
             width:calc(65vw);
-            text-align: center;
+            height: calc(100vh);
             float: left;
             color: #CCCCCC;
         }
         .introContainer:hover {
             background-color: #0000001a;
         }
+
         .introContainer p{
-            padding-left: 5vw;
-            padding-right: 5vw;
+            text-align: left;
+            margin-left: 3vw;
+            margin-right: 3vw;
         }
 
+    </style>
+
+    <style>
+        /* Photo Container */
+
         .photoContainer{
-            background-color: rgb(70, 70, 88);
+            background-color: #383836;
             width:calc(15vw);
             height:calc(100vh);
-            text-align: right;
             float: right;
-            padding-right:5vw;
-            padding-top: 5vh;
+            padding-top: 2vh;
         }
-        .photoContainer:hover {
-            background-color: rgb(80, 80, 88);
+
+
+
+        .handsomeManDivider {
+            text-align: center;
+            padding-bottom: 2vh;
         }
 
         .self_photo {
             height:calc(30vh);
+            text-align: center;
         }
-        .icons {
-            height:1vh;
-            float: right;
+
+
+        /* Socials */
+        .socials {
+            padding-left: 1vw;
+            padding-right: 1vw;
         }
-        .photoContainer a{
-            font-size: 1vh;
+
+        .socials img {
+            height:2vh;
             float: left;
-            color: #CCCCCC;
-            text-align: left;
+            padding-left: 5px;
         }
+        .socials div {
+            height:4vh;
+            padding-top: 1vh;
+
+        }
+        .socials div:hover {
+            background-color: #9A9FA7;
+        }
+
+        .socials p {
+            font-size: 6pt;
+            padding-right: 1vw;
+            float: right;
+            color: #CCCCCC;
+        }
+        
+        
 
     </style>
 
