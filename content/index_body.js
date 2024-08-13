@@ -5,10 +5,10 @@ function RenderBody() {
                         <div class="introContainer">
                             <div className="Header">
                                 <h1> Gracjan Blazejowski </h1>
-                                <h2><i> Software Developer </i></h2>
+                                <h2><i> Software Developer </i>|CV</h2>
                                 
                             </div>
-                            <div className="subHeader">
+                            <div className="overviewIntro">
                                 <h3>Overview:</h3>
                                 <hr />
                             </div>
@@ -21,6 +21,15 @@ function RenderBody() {
                                     Embedded programming enthusiast. Future backend engineer.
                                 </p>
                             </div>
+
+                            <div className="educationIntro">
+                                <h3> Education: </h3>
+                                <hr />
+                            </div>
+
+                            <div className="educationSection">
+                                
+                            </div>
                         </div>
 
                         <div class="photoContainer">
@@ -32,21 +41,21 @@ function RenderBody() {
                                 <a href="https://www.linkedin.com/in/gracjan-blazejowski-97b935233/">
                                     <div>
                                         <img src="../assets/icons/li.svg" />
-                                        <p> Gracjan Blazejowski </p><br />
+                                        <p> LinkedIn </p>
                                     </div>
                                 </a>
 
                                 <a href="https://github.com/Ryboster">
                                     <div>
                                         <img src="../assets/icons/gh.svg" />
-                                        <p> AmazonPython </p> <br />
+                                        <p> GitHub </p>
                                     </div>
                                 </a>
 
                                 <a href="mailto:blazejowski.biz@gmail.com">
                                     <div>
                                         <img src="../assets/icons/em.png" />
-                                        <p> blazejowski.biz@gmail.com </p>
+                                        <p> Email </p>
                                     </div>
                                 </a> <br />
                                    
