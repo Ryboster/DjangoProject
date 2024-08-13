@@ -43,10 +43,10 @@ function RenderBody() {
                                     </div>
                                 </a>
 
-                                <a href="mailto:gracjanblazejowski1@gmail.com">
+                                <a href="mailto:blazejowski.biz@gmail.com">
                                     <div>
                                         <img src="../assets/icons/em.png" />
-                                        <p> gracjanblazejowski1@gmail.com </p>
+                                        <p> blazejowski.biz@gmail.com </p>
                                     </div>
                                 </a> <br />
                                    
