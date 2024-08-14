@@ -17,3 +17,6 @@ https://www.w3schools.com/jsref/canvas_beginpath.asp
 
 https://www.educative.io/answers/how-to-create-a-timeline-in-html
 https://www.w3schools.com/howto/howto_css_timeline.asp
+
+http://stanford.edu/group/csp/cs03/week5/text6.html
+https://www.w3schools.com/cssref/pr_pos_left.php

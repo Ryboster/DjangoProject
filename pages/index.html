@@ -24,6 +24,7 @@
 
         </script>
         <style>
+            
 
             .navbar {
                 float: center;
@@ -113,6 +114,129 @@
             width: calc(61vw);
         }
 
+        /* Timeline */
+
+            .timeline {
+              position: relative; /* Set timeline's position as relative to
+                                    previous elements*/
+              max-width: 1200px;
+              max-height: 100%;
+              overflow: scroll;
+              padding-bottom: 3%;
+            }
+
+            .timeline::after {
+                /* Divider - The line in timeline */
+                content: '';
+                position: absolute;
+                width: 3px;
+                background-color: #CCCCCC;
+                left: 50%;
+                top: 0;
+                bottom: 0;
+            }
+
+       
+            .container {
+                /* Container for timeline items */
+                position: relative;
+                border: 1px solid #CCCCCC;
+                width: 40%;
+                left: 5%;
+                border-radius: 20%;
+            }
+
+
+            .leftYear {
+                /* Left year header */                
+                position: absolute;
+                left: 116%;
+                top:40%;
+            }
+            .rightYear {
+                /* Right year header */
+                position:absolute;
+                right: 116%;
+                top: 30%;
+            }
+            
+            .right::after {
+                /* Right circle */
+                content:'';
+                position: absolute;
+                border:8px solid #CCCCCC;
+                border-width:0, 0, 8px, 0;
+                right: 110%;
+                top: 50%;
+                border-radius: 50%;
+            }
+
+            
+            .left::after {
+                /* Left circle */
+                content: '';
+                position: absolute;
+                border: 8px solid #CCCCCC;
+                border-width:0, 0, 8px, 0;
+                border-radius:50%;
+                left: 110%;
+                top: 50%;
+            }
+
+            
+
+            .left::before {
+                /* Left container's arrow */
+                content:'';
+                position: absolute;
+                border:8px solid #CCCCCC;
+                border-width: 4px,4px, 4px, 0;
+                border-color: transparent transparent transparent #CCCCCC;
+                left: 100%;
+                top: 50%;
+            }
+
+            
+            .right::before {
+                /* Right container's arrow */
+                content: '';
+                position: absolute;
+                border: 8px solid #CCCCCC;
+                border-width: 4px, 0px, 4px, 4px;
+                border-color: transparent #CCCCCC transparent transparent;
+                right: 100%;
+                top: 50%;
+            }
+
+            .right {
+                left: 55%;            
+            }
+        
+
+
+
+        /* Qualifications Table */
+            .qualTable {
+                /* Qualifications table */
+                padding: 5% 5%; 
+                font-size: 9pt;
+                overflow: scroll;
+            }
+            .qualTable th {
+                /* Grade codes (e.g. HND) */
+                    width: auto;
+                }
+
+            .tableSplit {
+                /* Empty column in timeline items.
+                Divides qualifications */
+                width: 10%;
+            }
+
+
+        
+
+        
 
 
     </style>
@@ -121,7 +245,7 @@
         /* Body */
         .body{
             float:right;
-            height:calc(100vh);
+            height:auto;
             width:calc(85vw);
             background-color: #0000000d;
         }
@@ -132,7 +256,7 @@
         /* Background */
         .background {
             float:left;
-            height:calc(100vh);
+            height: calc(100vh);
             width:calc(10vw);
             background-color:#CCCCCC;
         }
@@ -144,7 +268,7 @@
         /* Intro */
         .introContainer{
             width:calc(65vw);
-            height: calc(100vh);
+            height: auto;
             float: left;
             color: #CCCCCC;
         }
@@ -229,7 +353,6 @@
             float: right;
             text-align: right;
         }
-        
         
 
     </style>

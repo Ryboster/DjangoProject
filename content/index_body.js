@@ -9,7 +9,6 @@ function RenderBody() {
                                 
                             </div>
                             <div className="overviewIntro">
-                                <h3>Overview:</h3>
                                 <hr />
                             </div>
 
@@ -28,7 +27,99 @@ function RenderBody() {
                             </div>
 
                             <div className="educationSection">
+
+                                <div class="timeline">
+                                    <div class="container left">
+                                        <div class="leftYear">
+                                            <h3>2018</h3>
+                                        </div>
+                                            <p>Springburn Academy</p>
+                                            <table class="qualTable">
+                                                <tr>
+                                                    <th>NAT 5</th>
+                                                    <td class="tableSplit"></td>
+                                                    <td>Information Systems Design and Development</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>NAT 5</th>
+                                                    <td class="tableSplit"></td>
+                                                    <td>Software Design and Development</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>NAT 5</th>
+                                                    <td class="tableSplit"></td>
+                                                    <td>Music Technology - Top Scorer</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>NAT 4</th>
+                                                    <td class="tableSplit"></td>
+                                                    <td>Computing Science</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Higher</th>
+                                                    <td class="tableSplit"></td>
+                                                    <td>Music</td>
+                                                </tr>
+
+
+                                            </table>
+
+                                        
+                                    </div>
+                                    <div class="container right">
+                                        <div class="rightYear">
+                                            <h3>2022</h3>
+                                        </div>
+
+
+                                        <p> Glasgow Clyde College </p>
+
+                                        <table class="qualTable">
+                                                <tr>
+                                                    <th>HND</th>
+                                                    <td class="tableSplit"></td>
+                                                    <td>Music</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>ABRSM 5</th>
+                                                    <td class="tableSplit"></td>
+                                                    <td>Music Theory - Distinction</td>
+                                                </tr>                                                
+
+                                            </table>
+                                    </div>
+
+                                    <div class="container left">
+                                        <div class="leftYear">
+                                            <h3>2026</h3>
+                                        </div>
+
+
+                                        <p> Glasgow Clyde College </p>
+
+                                        <table class="qualTable">
+                                                <tr>
+                                                    <th>BsC</th>
+                                                    <td class="tableSplit"></td>
+                                                    <td>Applied Software Development</td>
+                                                </tr>                                        
+
+                                            </table>
+                                    </div>
+                                </div>
                                 
+                                <p>
+                                    x
+                                    x
+                                    x
+                                    x
+                                    xx
+                                    xxx
+                                    xxx
+                                    x
+                                    xxxxxxx
+                                </p>
+                            
                             </div>
                         </div>
 
