@@ -50,18 +50,19 @@
 
     
 
-    <body style="background-color: #2C2C2C">
-        <div class="background"> </div>
-
+    <body style="background-color: #2C2C2C; display:flexbox; ">
+        
+        <div class="background" id="background" style="height: 100vh;"> </div>
         <div class="body" id="body"></div>
         <script type="text/babel">
 
-            
+                        
             ReactDOM.render(
                 <RenderBody />,
                 document.getElementById("body")
+                
             )
-        </script>    
+        </script>
     </body>
 
     <style>
@@ -83,6 +84,12 @@
             float: right;
             margin-right: 3vw;
         }
+
+        .experienceHeader {
+            margin-left: 3vw;
+            margin-right: 3vw;
+        }
+
         .overviewIntro {
             display: block;
             margin-left: 3vw;
@@ -121,8 +128,10 @@
                                     previous elements*/
               max-width: 1200px;
               max-height: 100%;
+              margin-left: 3vw;
+              margin-right: 3vw;
               overflow: scroll;
-              padding-bottom: 3%;
+              padding-top: calc(5vh);
             }
 
             .timeline::after {
@@ -132,7 +141,7 @@
                 width: 3px;
                 background-color: #CCCCCC;
                 left: 50%;
-                top: 0;
+                top: 5%;
                 bottom: 0;
             }
 
@@ -255,8 +264,8 @@
     <style>
         /* Background */
         .background {
+            right: 90%;
             float:left;
-            height: calc(100vh);
             width:calc(10vw);
             background-color:#CCCCCC;
         }
@@ -282,7 +291,7 @@
             margin-right: 3vw;
         }
         .educationSection {
-            margin-left: 3vw;
+            padding-bottom: calc(5vh);
         }
 
         .overviewSection {
@@ -375,6 +384,23 @@
             )
         </script>
 
-    </footer>
+        <script type="text/javascript">
+            window.onload = function() {
+                var bodyElement = document.getElementById("body");
+                var backgroundElement = document.getElementById("background");
+
+                if (bodyElement && backgroundElement) {
+                    var resizeObserver = new ResizeObserver(() => {
+                        var desiredHeight = bodyElement.offsetHeight;
+                        backgroundElement.style.height = desiredHeight + "px";
+                    });
+
+                    resizeObserver.observe(bodyElement);
+                } else {
+                    console.log("Body or Background element is missing.");
+                }
+            }
+        </script>
+</footer>
 </html>
 

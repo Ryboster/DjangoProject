@@ -9,6 +9,7 @@ function RenderBody() {
                                 
                             </div>
                             <div className="overviewIntro">
+                                <h3>Overview:</h3>
                                 <hr />
                             </div>
 
@@ -28,7 +29,52 @@ function RenderBody() {
 
                             <div className="educationSection">
 
+
+
                                 <div class="timeline">
+                                    <div class="container left">
+                                        <div class="leftYear">
+                                            <h3>2026</h3>
+                                        </div>
+
+                                        <p> Glasgow Clyde College </p>
+
+                                        <table class="qualTable">
+                                                <tr>
+                                                    <th>BsC</th>
+                                                    <td class="tableSplit"></td>
+                                                    <td>Applied Software Development</td>
+                                                </tr>                                        
+
+                                            </table>
+                                    </div>
+
+
+
+                                    
+                                    <div class="container right">
+                                        <div class="rightYear">
+                                            <h3>2022</h3>
+                                        </div>
+
+
+                                        <p> Glasgow Clyde College </p>
+
+                                        <table class="qualTable">
+                                                <tr>
+                                                    <th>HND</th>
+                                                    <td class="tableSplit"></td>
+                                                    <td>Music</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>ABRSM 5</th>
+                                                    <td class="tableSplit"></td>
+                                                    <td>Music Theory - Distinction</td>
+                                                </tr>                                                
+
+                                            </table>
+                                    </div>
+
                                     <div class="container left">
                                         <div class="leftYear">
                                             <h3>2018</h3>
@@ -66,60 +112,27 @@ function RenderBody() {
 
                                         
                                     </div>
-                                    <div class="container right">
-                                        <div class="rightYear">
-                                            <h3>2022</h3>
-                                        </div>
 
-
-                                        <p> Glasgow Clyde College </p>
-
-                                        <table class="qualTable">
-                                                <tr>
-                                                    <th>HND</th>
-                                                    <td class="tableSplit"></td>
-                                                    <td>Music</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>ABRSM 5</th>
-                                                    <td class="tableSplit"></td>
-                                                    <td>Music Theory - Distinction</td>
-                                                </tr>                                                
-
-                                            </table>
-                                    </div>
-
-                                    <div class="container left">
-                                        <div class="leftYear">
-                                            <h3>2026</h3>
-                                        </div>
-
-
-                                        <p> Glasgow Clyde College </p>
-
-                                        <table class="qualTable">
-                                                <tr>
-                                                    <th>BsC</th>
-                                                    <td class="tableSplit"></td>
-                                                    <td>Applied Software Development</td>
-                                                </tr>                                        
-
-                                            </table>
-                                    </div>
+                                    
                                 </div>
-                                
+                            
+                            </div>
+                            <div class="experienceHeader">
+                                <h3> Experience</h3>
+                            <hr></hr>
+                            </div>
+                            <div className="experienceSection">
                                 <p>
                                     x
                                     x
                                     x
                                     x
-                                    xx
-                                    xxx
-                                    xxx
+                                    <br>
+                                    
+                                    </br>
                                     x
-                                    xxxxxxx
+                                    x
                                 </p>
-                            
                             </div>
                         </div>
 
@@ -154,5 +167,6 @@ function RenderBody() {
                             </div>
                         </div>
                     </div>
-                )
+
+                )            
             }
