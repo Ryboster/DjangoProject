@@ -15,9 +15,12 @@ function RenderBody() {
 
                             <div className="overviewSection">
                                 <p>
-                                    Currently involved in collaborative development of a video game as a leader of a small team. Tenacious and determined
-                                    IT professional with experience in several programming languages. Skilled in object oriented programming, version control
-                                    systems and continuous integration. First hand experience in project management, SCRUM framework and Agile methodology.
+                                     
+                                    Currently developing a video game in Pygame as a leader of a small team.<br/>
+                                    Tenacious programmer experienced in several programming languages, with
+                                     Object-Oriented Programming (OOP) being my core expertise.<br/>
+                                    Skilled in version control systems and workflow automation.
+                                     First hand experience in project management, SCRUM framework and Agile methodology.
                                     Embedded programming enthusiast. Future backend engineer.
                                 </p>
                             </div>
@@ -48,8 +51,6 @@ function RenderBody() {
 
                                             </table>
                                     </div>
-
-
 
                                     
                                     <div class="container right">
@@ -162,9 +163,40 @@ function RenderBody() {
                                         <p> Email </p>
                                     </div>
                                 </a> <br />
-                                   
-                                
                             </div>
+                            <div class="technicalSkills">
+                                <p style={{"color":"#CCCCCC"}}>Core Skills</p>
+                                <hr/>
+                                <table class="technicalSkillsTable">
+                                    <tr>
+                                        <td>OOP <div class="tooltip">  Demonstrated application of SOLID principles in Python and Java </div></td>
+                                        <td>OOAD <div class="tooltip"> Versed in creating entity-relationship and workflow diagrams. Familiar with using common design patterns.</div> </td>
+                                    </tr>
+                                    <tr>
+                                        <td>CI/CD <div class="tooltip">Proficiency in Git workflow management and collaboration on GitHub platform.</div></td>
+                                        <td>Agile</td>
+                                    </tr>
+                                    <tr>
+                                    </tr>
+                                </table>
+
+                                <p style={{"color":"#CCCCCC"}}> Languages </p>
+                                <hr/>
+                                <table class="languagesTable">
+                                    <tr>
+                                        <td>Python</td>
+                                        <td>Java</td>
+                                    </tr>
+                                    <tr>
+                                        <td>JavaScript</td>
+                                        <td>CSS</td>
+                                    </tr>
+                                    <tr>
+                                        <td>HTML</td>
+                                    </tr>
+                                </table>
+                            </div>
+
                         </div>
                     </div>
 
