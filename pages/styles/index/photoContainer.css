@@ -1,0 +1,156 @@
+/* The entire container */
+.photoContainer{
+    background-color: #383836;
+    width:calc(15vw);
+    height:auto;
+    float: right;
+    padding-top: 2vh;
+}
+
+
+
+
+
+/* Selife */
+.self_photo {
+    width:calc(13vw);
+    text-align: center;
+}
+
+/* Selfie Divider*/
+.handsomeManContainer {
+    text-align: center;
+    padding-bottom: 2vh;
+}
+
+
+
+
+
+/* Socials */
+.socials {
+    width: calc(13vw);
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+/* Icon and text wrappers */
+.socials div {
+    display:flex;
+    height:calc(4vh);
+    padding-top: calc(1vh);
+    overflow: hidden;
+}
+.socials div:hover {
+    background-color: #9A9FA7;
+}
+
+/* Socials - Icons */
+.socials img {
+    width: calc(2vw);
+    height: calc(2vw);
+    float: left;
+    padding-left: 5px;
+    flex:0;
+    margin-right:calc(2vw)
+}
+
+/* Socials - Plain text */
+.socials p {
+    font-size: 8pt;
+    padding-right: 1vw;
+    white-space: nowrap;
+    flex: 1;
+    color: #CCCCCC;
+    text-overflow: ellipsis;
+    float: right;
+    text-align: right;
+}
+
+
+
+
+
+
+/* Core skills section */
+.coreSkills {
+    
+    padding-left: calc(1vw);
+    padding-right: calc(1vw);
+    margin: auto;
+    text-align: left;
+    justify-content: center;
+    
+}
+
+/* Core skills wrapper */
+.coreSkillsTable {
+    text-align: center;
+    margin: auto;
+    width: calc(13vw);
+    height: auto;
+    overflow: scroll;
+    
+}
+
+.coreSkillsTable td {
+    padding: calc(1%) calc(1%);
+    border: 2px solid #CCCCCC;
+    background-color: #CCCCCC;
+    border-radius: 10%;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+.coreSkillsTable td:hover {
+    background-color: #9A9FA7;
+}
+
+.coreSkillsTable td:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+
+
+.languagesTable {
+    text-align: center;
+    margin: auto;
+    max-width: calc(13vw);
+    width: auto;
+    overflow: scroll;
+}
+
+.languagesTable td {
+    text-overflow: scroll;
+    width: auto;
+    max-width: calc(4vw);
+    padding: calc(1%) calc(1%);
+    border: 2px solid #CCCCCC;
+    background-color: #CCCCCC;
+    border-radius: 10%;
+    
+}
+.languagesTable td:hover {
+    background-color: #9A9FA7;
+}
+
+.tooltip {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%; /* Position the tooltip above the text */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s; /* Add a 0.3s delay on popup */
+  white-space: normal; /* Prevents text wrapping */
+}
+        

@@ -3,12 +3,12 @@ function RenderBody() {
                 return(
                     <div>
                         <div class="introContainer">
-                            <div className="Header">
+                            <div className="introContainerHeader">
                                 <h1> Gracjan Blazejowski </h1>
                                 <h2><i> Software Developer </i>|CV</h2>
                                 
                             </div>
-                            <div className="overviewIntro">
+                            <div className="overviewHeader">
                                 <h3>Overview:</h3>
                                 <hr />
                             </div>
@@ -25,7 +25,7 @@ function RenderBody() {
                                 </p>
                             </div>
 
-                            <div className="educationIntro">
+                            <div className="educationHeader">
                                 <h3> Education: </h3>
                                 <hr />
                             </div>
@@ -35,7 +35,7 @@ function RenderBody() {
 
 
                                 <div class="timeline">
-                                    <div class="container left">
+                                    <div class="timelineContainer left">
                                         <div class="leftYear">
                                             <h3>2026</h3>
                                         </div>
@@ -53,7 +53,7 @@ function RenderBody() {
                                     </div>
 
                                     
-                                    <div class="container right">
+                                    <div class="timelineContainer right">
                                         <div class="rightYear">
                                             <h3>2022</h3>
                                         </div>
@@ -76,7 +76,7 @@ function RenderBody() {
                                             </table>
                                     </div>
 
-                                    <div class="container left">
+                                    <div class="timelineContainer left">
                                         <div class="leftYear">
                                             <h3>2018</h3>
                                         </div>
@@ -138,7 +138,7 @@ function RenderBody() {
                         </div>
 
                         <div class="photoContainer">
-                            <div class="handsomeManDivider">
+                            <div class="handsomeManContainer">
                                 <img src="../assets/handsome_man.png" className="self_photo" /> <br />
                             </div>
                             <div class="socials">
@@ -164,10 +164,10 @@ function RenderBody() {
                                     </div>
                                 </a> <br />
                             </div>
-                            <div class="technicalSkills">
+                            <div class="coreSkills">
                                 <p style={{"color":"#CCCCCC"}}>Core Skills</p>
                                 <hr/>
-                                <table class="technicalSkillsTable">
+                                <table class="coreSkillsTable">
                                     <tr>
                                         <td>OOP <div class="tooltip">  Demonstrated application of SOLID principles in Python and Java </div></td>
                                         <td>OOAD <div class="tooltip"> Versed in creating entity-relationship and workflow diagrams. Familiar with using common design patterns.</div> </td>

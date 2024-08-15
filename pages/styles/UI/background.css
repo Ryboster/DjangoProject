@@ -1,0 +1,8 @@
+/* Background */
+.background {
+    right: 90%;
+    float:left;
+    height: calc(100vh);
+    width:calc(10vw);
+    background-color:#CCCCCC;
+}

@@ -1,0 +1,31 @@
+.table_picture{
+    width: 10vw;
+    height: 10vh;
+    float: left;
+}
+.table_description{
+    font-size:12px;
+    width: 50vw;
+    height: 10vh;
+}
+.table_title {
+    width: 15vw;
+    height: 10vh;
+}
+.projectsTableWrapper tr:hover {
+    background-color: #888888;
+}
+.projectsTableWrapper{
+    width:calc(85vw);
+    text-align: center;
+    color: #CCCCCC;
+}
+.projectsTableWrapper img{
+    height: 10vh;
+    width: 10vw;
+    padding-top: 5vh;
+}
+.projectsTableWrapper a{
+    color: #CCCCCC;
+    text-decoration: none;
+}

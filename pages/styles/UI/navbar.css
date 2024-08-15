@@ -1,0 +1,22 @@
+/* Navbar */
+.navbar {
+    padding: 2px 2px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 25px;
+}
+
+/* Hover highlighter on bar */
+.navbar:hover{
+    background-color: #0000001a;
+}
+
+/* Background colour on buttons */
+.navbar_button {
+    background-color: #0000000d;
+}
+
+/* Hover highlighter on buttons */
+.navbar_button:hover{
+    background-color: #9A9FA7;
+}

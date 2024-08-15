@@ -1,65 +1,44 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- Import react and babel -->
         <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
         <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
         <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
         <script src="https://unpkg.com/react-markdown/umd/react-markdown.min.js"></script>
 
+        <!-- Import UI elements-->
         <script type="text/babel" src="../UI/navBar.js"></script>
-        <script type="text/javascript" src="../functions.js"></script>
         <script type="text/babel" src="../UI/footer.js"></script>
-        <script type="text/babel" src="../content/projects_body.js"></script>
 
+        <!-- Import javascript helper functions -->
+        <script type="text/javascript" src="../functions.js"></script>
+
+        <!-- Import page content -->
+        <script type="text/babel" src="./content/projects_body.js"></script>
+
+        <!-- Import CSS -->
+        <link rel="stylesheet" type="text/css" href="./styles/UI/navbar.css" />
+        <link rel="stylesheet" type="text/css" href="./styles/UI/footer.css" />
+        <link rel="stylesheet" type="text/css" href="./styles/UI/body.css" />
+        <link rel="stylesheet" type="text/css" href="./styles/UI/background.css" />
+        <link rel="stylesheet" type="text/css" href="./styles/projects/projectsContainer.css" />
     </head>
-        <div class="headsup"></div>
-        <div id="navbar" class="navbar"></div>
 
-        <script type="text/babel">
 
-            ReactDOM.render(
-                <CreateNavBar />,
-                document.getElementById("navbar")
-            );
-
-        </script>
-
-        <style>
-            /* Navbar */
-            .navbar {
-                float: center;
-                padding: 2px 2px;
-                overflow: hidden;
-                text-align: center;
-                font-size: 25px;
-                overflow:scroll;
-            }
-            .navbar:hover{
-                background-color: #0000001a;
-            }
-            
-            .navbar_button {
-                background-color: #0000000d;
-            }
-            .navbar_button:hover{
-                background-color: #9A9FA7;
-            }
-
-            
-        </style>
-
+    <div id="navbar" class="navbar"></div>
+    <script type="text/babel">
+        ReactDOM.render(
+            <CreateNavBar />,
+            document.getElementById("navbar")
+        );
+    </script>
     
 
     <body style="background-color: #2C2C2C">
-        <script type="text/javascript">
-
-        </script>
-
         <div class="background"> </div>
-
         <div class="body" id="body"></div>
         <script type="text/babel">
-
             
             ReactDOM.render(
                 <RenderBody />,
@@ -67,80 +46,34 @@
             )
         </script>    
     </body>
-    
-    <style>
-        /* Body */
-        .body{
-            float:right;
-            height:calc(100vh);
-            width:calc(85vw);
-            background-color: #0000000d;
-        }
-        .body:hover{
-            background-color: #0000001a;
-        }
-
-        .table_picture{
-            width: 10vw;
-            height: 10vh;
-            float: left;
-        }
-        .table_description{
-            font-size:12px;
-            width: 50vw;
-            height: 10vh;
-        }
-        .table_title {
-            width: 15vw;
-            height: 10vh;
-        }
-
-        .background {
-            float:left;
-            height:calc(100vh);
-            width:calc(10vw);
-            background-color:#CCCCCC;
-        }
-
-        .introContainer tr:hover {
-            background-color: #888888;
-        }
-
-
-        .introContainer{
-            width:calc(85vw);
-            text-align: center;
-            color: #CCCCCC;
-        }
-
-        .introContainer img{
-            height: 10vh;
-            width: 10vw;
-            padding-top: 5vh;
-        }
-        .introContainer a{
-            color: #CCCCCC;
-            text-decoration: none;
-        }
-
-    </style>
 
     <footer>
         <div id="footer" class="footer">x</div>
-        <style>
-            .footer {
-                background-color: #4dbedf;
-                position: fixed;
-                bottom: 0;
-                width: 100vw;
-            }
-        </style>
         <script type="text/babel">
             
             ReactDOM.render(
                 <CreateFooter />,
                 document.getElementById("footer")
             )
+        </script>
+
+
+        <script type="text/javascript">
+            window.onload = function() {
+                var bodyElement = document.getElementById("body");
+                var backgroundElement = document.getElementById("background");
+
+                if (bodyElement && backgroundElement) {
+                    var resizeObserver = new ResizeObserver(() => {
+                        var desiredHeight = bodyElement.offsetHeight;
+                        backgroundElement.style.height = desiredHeight + "px";
+                    });
+
+                    resizeObserver.observe(bodyElement);
+                } else {
+                    console.log("Body or Background element is missing.");
+                }
+            }
         </script>
 
     </footer>

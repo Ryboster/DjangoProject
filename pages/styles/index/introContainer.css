@@ -1,0 +1,114 @@
+/* The entire container */
+.introContainer{
+    width:calc(65vw);
+    height: auto;
+    float: left;
+    color: #CCCCCC;
+}
+.introContainer:hover {
+    background-color: #0000001a;
+}
+.introContainer p{
+    text-align: left;
+    margin-left: 3vw;
+    margin-right: 3vw;
+}
+
+
+
+
+/* Header Section */
+
+/* Container for name, surname and title */
+.introContainerHeader {
+    margin-top: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Name and Surname */
+.introContainerHeader h1 {
+    float: left;
+    margin-left: 3vw;
+}
+
+/* Title */
+.introContainerHeader h2 {
+    font-weight: normal;
+    float: right;
+    margin-right: 3vw;
+}
+
+/* Container for the overview section
+    header and divider */
+.overviewHeader {
+    display: block;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    height: auto;
+    overflow:hidden;
+}
+
+/* "Overview:" header */
+.overviewHeader h3 {
+    float: left;
+}
+
+/* Top Divider */
+.overviewHeader hr {
+    float:left;
+    width: calc(61vw);
+}
+
+
+
+
+
+/* Overview Section - Content */
+
+.overviewSection {
+    padding-bottom:calc(5vh);
+}
+
+
+
+
+
+
+/* Education Section */
+.educationSection {
+    padding-bottom: calc(5vh);
+}
+
+.educationHeader {
+    display: block;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    height: auto;
+    overflow:hidden;
+}
+.educationHeader h3 {
+    float: left;
+}
+.educationHeader hr {
+    float:left;
+    width: calc(61vw);
+}
+
+.educationSection {
+    padding-bottom: calc(5vh);
+}
+.overviewSection {
+    padding-bottom:calc(5vh);
+}
+
+
+
+
+
+/* */
+.experienceHeader {
+    margin-left: 3vw;
+    margin-right: 3vw;
+}

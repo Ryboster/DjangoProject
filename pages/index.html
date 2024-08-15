@@ -1,57 +1,56 @@
+<!-- Blazejowski, G. 2024 -->
+
 <!DOCTYPE html>
 <html>
+
+    <!-- Initialization -->
     <head>
+
+        <!-- Import react and babel -->
         <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
         <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
         <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
         <script src="https://unpkg.com/react-markdown/umd/react-markdown.min.js"></script>
         
+        <!-- Import javascript helper functions -->
         <script type="text/javascript" src="./functions.js"> </script>
+
+        <!-- Import UI elements-->
         <script type="text/babel" src="../UI/navBar.js"></script>
         <script type="text/babel" src="../UI/footer.js"></script>
-        <script type="text/babel" src="../content/index_body.js"></script>
+
+        <!-- Import page content -->
+        <script type="text/babel" src="./content/index_body.js"></script>
+
+        <!-- Import CSS -->
+        <link rel="stylesheet" type="text/css" href="./styles/UI/navbar.css" />
+        <link rel="stylesheet" type="text/css" href="./styles/index/timeline.css" />
+        <link rel="stylesheet" type="text/css" href="./styles/index/introContainer.css" />
+        <link rel="stylesheet" tyoe="text/css" href="./styles/index/photoContainer.css" />
+        <link rel="stylesheet" type="text/css" href="./styles/UI/footer.css" />
+
+        <link rel="stylesheet" type="text/css" href="./styles/UI/body.css" />
+
+        <link rel="stylesheet" type="text/css" href="./styles/UI/background.css" />
+        
+
     </head>
     
-        <div id="navbar" class="navbar"></div>
-
-        <script type="text/babel">
-            
-            ReactDOM.render(
-                <CreateNavBar />,
-                document.getElementById("navbar")
-            );
-            //background-color: #11191c;
-
-        </script>
-        <style>
-            
-
-            .navbar {
-                float: center;
-                padding: 2px 2px;
-                overflow: hidden;
-                text-align: center;
-                font-size: 25px;
-                overflow:scroll;
-            }
-            .navbar:hover{
-                background-color: #0000001a;
-            }
-            
-            .navbar_button {
-                background-color: #0000000d;
-            }
-            .navbar_button:hover{
-                background-color: #9A9FA7;
-            }
-
-            
-        </style>
+    <!-- Render navbar -->
+    <div id="navbar" class="navbar"></div>
+    <script type="text/babel">
+        
+        ReactDOM.render(
+            <CreateNavBar />,
+            document.getElementById("navbar")
+        );
+    </script>
 
     
+    <!-- Body -->
+    <body style="background-color: #2C2C2C;">
 
-    <body style="background-color: #2C2C2C; display:flexbox; ">
-        
+        <!-- Render content -->
         <div class="background" id="background" style="height: 100vh;"> </div>
         <div class="body" id="body"></div>
         <script type="text/babel">
@@ -65,397 +64,11 @@
         </script>
     </body>
 
-    <style>
-        /* Header */
-        .Header {
-            margin-top: 5vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
 
-        }
-        .Header h1 {
-            float: left;
-            margin-left: 3vw;
-
-        }
-        .Header h2 {
-            font-weight: normal;
-            float: right;
-            margin-right: 3vw;
-        }
-
-        .experienceHeader {
-            margin-left: 3vw;
-            margin-right: 3vw;
-        }
-
-        .overviewIntro {
-            display: block;
-            margin-left: 3vw;
-            margin-right: 3vw;
-            height: auto;
-            overflow:hidden;
-        }
-
-        .overviewIntro h3 {
-            float: left;
-        }
-        .overviewIntro hr {
-            float:left;
-            width: calc(61vw);
-        }
-
-        .educationIntro {
-            display: block;
-            margin-left: 3vw;
-            margin-right: 3vw;
-            height: auto;
-            overflow:hidden;
-        }
-        .educationIntro h3 {
-            float: left;
-        }
-        .educationIntro hr {
-            float:left;
-            width: calc(61vw);
-        }
-
-        /* Timeline */
-
-            .timeline {
-              position: relative; /* Set timeline's position as relative to
-                                    previous elements*/
-              max-width: 1200px;
-              max-height: 100%;
-              margin-left: 3vw;
-              margin-right: 3vw;
-              overflow: scroll;
-              padding-top: calc(5vh);
-            }
-
-            .timeline::after {
-                /* Divider - The line in timeline */
-                content: '';
-                position: absolute;
-                width: 3px;
-                background-color: #CCCCCC;
-                left: 50%;
-                top: 5%;
-                bottom: 0;
-            }
-
-       
-            .container {
-                /* Container for timeline items */
-                position: relative;
-                border: 1px solid #CCCCCC;
-                width: 40%;
-                left: 5%;
-                border-radius: 20%;
-            }
-
-
-            .leftYear {
-                /* Left year header */                
-                position: absolute;
-                left: 116%;
-                top:40%;
-            }
-            .rightYear {
-                /* Right year header */
-                position:absolute;
-                right: 116%;
-                top: 30%;
-            }
-            
-            .right::after {
-                /* Right circle */
-                content:'';
-                position: absolute;
-                border:8px solid #CCCCCC;
-                border-width:0, 0, 8px, 0;
-                right: 110%;
-                top: 50%;
-                border-radius: 50%;
-            }
-
-            
-            .left::after {
-                /* Left circle */
-                content: '';
-                position: absolute;
-                border: 8px solid #CCCCCC;
-                border-width:0, 0, 8px, 0;
-                border-radius:50%;
-                left: 110%;
-                top: 50%;
-            }
-
-            
-
-            .left::before {
-                /* Left container's arrow */
-                content:'';
-                position: absolute;
-                border:8px solid #CCCCCC;
-                border-width: 4px,4px, 4px, 0;
-                border-color: transparent transparent transparent #CCCCCC;
-                left: 100%;
-                top: 50%;
-            }
-
-            
-            .right::before {
-                /* Right container's arrow */
-                content: '';
-                position: absolute;
-                border: 8px solid #CCCCCC;
-                border-width: 4px, 0px, 4px, 4px;
-                border-color: transparent #CCCCCC transparent transparent;
-                right: 100%;
-                top: 50%;
-            }
-
-            .right {
-                left: 55%;            
-            }
-        
-
-
-
-        /* Qualifications Table */
-            .qualTable {
-                /* Qualifications table */
-                padding: 5% 5%; 
-                font-size: 9pt;
-                overflow: scroll;
-            }
-            .qualTable th {
-                /* Grade codes (e.g. HND) */
-                    width: auto;
-                }
-
-            .tableSplit {
-                /* Empty column in timeline items.
-                Divides qualifications */
-                width: 10%;
-            }
-
-
-        
-
-        
-
-
-    </style>
-
-    <style>
-        /* Body */
-        .body{
-            float:right;
-            height:auto;
-            width:calc(85vw);
-            background-color: #0000000d;
-        }
-
-    </style>
-
-    <style>
-        /* Background */
-        .background {
-            right: 90%;
-            float:left;
-            width:calc(10vw);
-            background-color:#CCCCCC;
-        }
-
-    </style>
-
-
-    <style>
-        /* Intro */
-        .introContainer{
-            width:calc(65vw);
-            height: auto;
-            float: left;
-            color: #CCCCCC;
-        }
-        .introContainer:hover {
-            background-color: #0000001a;
-        }
-
-        .introContainer p{
-            text-align: left;
-            margin-left: 3vw;
-            margin-right: 3vw;
-        }
-        .educationSection {
-            padding-bottom: calc(5vh);
-        }
-
-        .overviewSection {
-            padding-bottom:calc(5vh);
-
-        }
-
-
-    </style>
-
-    <style>
-        /* Photo Container */
-
-        .photoContainer{
-            background-color: #383836;
-            width:calc(15vw);
-            height:auto;
-            float: right;
-            padding-top: 2vh;
-        }
-
-
-
-        .handsomeManDivider {
-            text-align: center;
-            padding-bottom: 2vh;
-        }
-
-        .self_photo {
-            width:calc(13vw);
-            text-align: center;
-        }
-
-
-        /* Socials */
-        .socials {
-            width: calc(13vw);
-            padding-left: 1vw;
-            padding-right: 1vw;
-        }
-
-        .socials img {
-            width: calc(2vw);
-            height: calc(2vw);
-            float: left;
-            padding-left: 5px;
-            flex:0;
-            margin-right:calc(2vw)
-        }
-        .socials div {
-            display:flex;
-            height:calc(4vh);
-            padding-top: calc(1vh);
-            overflow: hidden;
-        }
-        .socials div:hover {
-            background-color: #9A9FA7;
-        }
-
-        .socials p {
-            font-size: 8pt;
-            padding-right: 1vw;
-            white-space: nowrap;
-            flex: 1;
-            color: #CCCCCC;
-            text-overflow: ellipsis;
-            float: right;
-            text-align: right;
-
-        }
-
-        .technicalSkills {
-            
-            padding-left: calc(1vw);
-            padding-right: calc(1vw);
-            margin: auto;
-            text-align: left;
-            justify-content: center;
-            
-        }
-        
-        .technicalSkillsTable {
-            text-align: center;
-            margin: auto;
-            width: calc(13vw);
-            height: auto;
-            overflow: scroll;
-            
-        }
-        .languagesTable {
-            text-align: center;
-            margin: auto;
-            max-width: calc(13vw);
-            width: auto;
-
-            overflow: scroll;
-        }
-
-
-        .technicalSkillsTable td {
-            padding: calc(1%) calc(1%);
-            border: 2px solid #CCCCCC;
-            background-color: #CCCCCC;
-            border-radius: 10%;
-        }
-        .technicalSkillsTable td:hover {
-            background-color: #9A9FA7;
-        }
-        .languagesTable td {
-            text-overflow: scroll;
-            width: auto;
-            max-width: calc(4vw);
-            padding: calc(1%) calc(1%);
-            border: 2px solid #CCCCCC;
-            background-color: #CCCCCC;
-            border-radius: 10%;
-            
-        }
-        .languagesTable td:hover {
-            background-color: #9A9FA7;
-        }
-        
-        .tooltip {
-          visibility: hidden;
-
-          background-color: #333;
-          color: #fff;
-          text-align: center;
-          border-radius: 5px;
-          padding: 5px;
-          position: absolute;
-          z-index: 1;
-          bottom: 100%; /* Position the tooltip above the text */
-          left: 50%;
-          transform: translateX(-50%);
-          opacity: 0;
-          transition: opacity 0.3s; /* Add a 0.3s delay on popup */
-          white-space: normal; /* Prevents text wrapping */
-        }
-        
-        .technicalSkillsTable td:hover .tooltip {
-          visibility: visible;
-          opacity: 1;
-        }
-
-        .technicalSkillsTable td {
-          position: relative;
-          display: inline-block;
-          cursor: pointer;
-        }
-
-
-    </style>
-
+    <!-- Footer -->
     <footer>
         <div id="footer" class="footer">x</div>
-        <style>
-            .footer {
-                background-color: #4dbedf;
-                position: fixed;
-                bottom: 0;
-                width: 100vw;
-            }
-        </style>
+
         <script type="text/babel">
             
             ReactDOM.render(

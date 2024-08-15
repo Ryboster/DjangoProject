@@ -2,7 +2,7 @@ function RenderBody() {
                 
                 return(
                     <div style={{position: "relative"}}>
-                        <div class="introContainer">
+                        <div class="projectsTableWrapper">
                             <table class="projectsTable">
                                 
                                     <a href="https://google.com/">
