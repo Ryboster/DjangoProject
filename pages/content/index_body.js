@@ -164,37 +164,81 @@ function RenderBody() {
                                     </div>
                                 </a> <br />
                             </div>
-                            <div class="coreSkills">
+                            <div class="coreSkillsSection">
                                 <p style={{"color":"#CCCCCC"}}>Core Skills</p>
                                 <hr/>
-                                <table class="coreSkillsTable">
-                                    <tr>
-                                        <td>OOP <div class="tooltip">  Demonstrated application of SOLID principles in Python and Java </div></td>
-                                        <td>OOAD <div class="tooltip"> Versed in creating entity-relationship and workflow diagrams. Familiar with using common design patterns.</div> </td>
-                                    </tr>
-                                    <tr>
-                                        <td>CI/CD <div class="tooltip">Proficiency in Git workflow management and collaboration on GitHub platform.</div></td>
-                                        <td>Agile</td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                </table>
 
-                                <p style={{"color":"#CCCCCC"}}> Languages </p>
+                                <div class="skillItem">
+                                    OOP <div class="tooltip">Skilled in Object-Oriented Programming with demonstrated application of SOLID principles in Python. C++ and
+JavaScript experience. </div>
+                                    <div class="skillProgressBar">
+                                        <div class="skillFill" style={{"width": "55%"}}> </div>
+                                        <i>55%</i>
+                                    </div>
+                                </div>
+
+                                <div class="skillItem">
+                                    CI/CD <div class="tooltip">Proficiency in Git workflow management and collaboration on GitHub platform. </div>
+                                    <div class="skillProgressBar">
+                                        <div class="skillFill" style={{"width": "25%"}}></div>
+                                        <i>25%</i>
+                                    </div>
+                                </div>
+
+                                <div class="skillItem">
+                                    OOAD <div class="tooltip">Well versed in generating entity-relationship and workflow diagrams on Mural. Implementing common design
+patterns. </div>
+                                    <div class="skillProgressBar">
+                                        <div class="skillFill" style={{"width": "20%"}}></div>
+                                        <i>20%</i>
+                                    </div>
+                                </div>
+                                
+
+                                <p style={{"color":"#CCCCCC"}}>Languages</p>
                                 <hr/>
-                                <table class="languagesTable">
-                                    <tr>
-                                        <td>Python</td>
-                                        <td>Java</td>
-                                    </tr>
-                                    <tr>
-                                        <td>JavaScript</td>
-                                        <td>CSS</td>
-                                    </tr>
-                                    <tr>
-                                        <td>HTML</td>
-                                    </tr>
-                                </table>
+
+                                <div class="skillItem"> 
+                                    Python <div class="tooltip">  PYTHON </div>
+                                    <div class="skillProgressBar">
+                                        <div class="skillFill" style={{"width": "75%"}}></div>
+                                        <i>75%</i>
+                                    </div>
+                                </div>
+
+                                <div class="skillItem">
+                                    Java <div class="tooltip">  PYTHON </div>
+                                    <div class="skillProgressBar">
+                                        <div class="skillFill" style={{"width": "7.5%"}}></div>
+                                        <i>7.5%</i>
+                                    </div>
+                                </div>
+
+                                <div class="skillItem">
+                                    HTML <div class="tooltip">  PYTHON </div>
+                                    <div class="skillProgressBar">
+                                        <div class="skillFill" style={{"width": "7.5%"}}></div>
+                                        <i>7.5%</i>
+                                    </div>
+                                </div>
+
+                                <div class="skillItem">
+                                    CSS <div class="tooltip">  PYTHON </div>
+                                    <div class="skillProgressBar">
+                                        <div class="skillFill" style={{"width": "5%"}}></div>
+                                        <i>5%</i>
+                                    </div>
+                                </div>
+
+
+                                <div class="skillItem">
+                                    Javascript <div class="tooltip">  PYTHON </div>
+                                    <div class="skillProgressBar">
+                                        <div class="skillFill" style={{"width": "5%"}}></div>
+                                        <i>5%</i>
+                                    </div>
+                                </div>
+  
                             </div>
 
                         </div>

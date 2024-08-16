@@ -5,6 +5,7 @@
     height:auto;
     float: right;
     padding-top: 2vh;
+    padding-bottom: calc(2vh);
 }
 
 
@@ -73,84 +74,87 @@
 
 
 /* Core skills section */
-.coreSkills {
-    
+.coreSkillsSection {
+    display: block;
     padding-left: calc(1vw);
     padding-right: calc(1vw);
-    margin: auto;
+    width: calc(13vw);
     text-align: left;
     justify-content: center;
     
 }
 
-/* Core skills wrapper */
-.coreSkillsTable {
-    text-align: center;
-    margin: auto;
-    width: calc(13vw);
-    height: auto;
-    overflow: scroll;
-    
-}
-
-.coreSkillsTable td {
-    padding: calc(1%) calc(1%);
-    border: 2px solid #CCCCCC;
-    background-color: #CCCCCC;
-    border-radius: 10%;
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-}
-.coreSkillsTable td:hover {
-    background-color: #9A9FA7;
-}
-
-.coreSkillsTable td:hover .tooltip {
-  visibility: visible;
-  opacity: 1;
-}
-
-
-
-
-
-.languagesTable {
-    text-align: center;
-    margin: auto;
-    max-width: calc(13vw);
-    width: auto;
-    overflow: scroll;
-}
-
-.languagesTable td {
-    text-overflow: scroll;
-    width: auto;
+.coreSkill {
     max-width: calc(4vw);
-    padding: calc(1%) calc(1%);
-    border: 2px solid #CCCCCC;
-    background-color: #CCCCCC;
-    border-radius: 10%;
-    
 }
-.languagesTable td:hover {
+
+.skillDivider {
+    width: calc(2vw);
+}
+
+.skillItem {
+    width: 100%;
+    display: flex;
+    margin: 0 0;
+    color: #CCCCCC;
+    font-size: 10pt;
+}
+
+.skillItem:hover {
     background-color: #9A9FA7;
 }
+
+.skillItem:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.skillProgressBar {
+    display: flex;
+    position: absolute;
+    right: calc(2vw);
+    width: calc(4vw);
+    background-color: #e0e0e0;
+    border-radius: 5%;
+    overflow: hidden;
+    height: 15px;
+}
+
+.skillFill {
+    height: 100%;
+    background-color: #9A9FA7;
+
+}
+.skillProgressBar i {
+    position: absolute;
+    right: 0%;
+    text-align: right;
+    font-size: 9pt;
+    color: black;
+}
+
 
 .tooltip {
-  visibility: hidden;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  border-radius: 5px;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: 100%; /* Position the tooltip above the text */
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 0.3s; /* Add a 0.3s delay on popup */
-  white-space: normal; /* Prevents text wrapping */
+    visibility: hidden;
+    padding: 10px 10px;
+    background-color: #383836;
+    color: #CCCCCC;
+    text-align: left;
+    border-radius: 5px;
+    position: absolute;
+
+    inline-size: 20%;
+    white-space: pre-wrap;
+    right: 16%;
+    opacity: 0;
 }
-        
+
+.tooltip::before {
+    content: '';
+    position: absolute;
+    border:8px solid #383836;
+    border-width: 4px,4px, 4px, 0;
+    border-color: transparent transparent transparent #383836;
+    right: -14px;
+    top: 0%;
+}
