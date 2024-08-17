@@ -14,14 +14,14 @@ function RenderBody() {
                             </div>
 
                             <div className="overviewSection">
+                                <p> Currently leading a small team in the development of a video game in Pygame. </p>
                                 <p>
-                                     
-                                    Currently developing a video game in Pygame as a leader of a small team.<br/>
-                                    Tenacious programmer experienced in several programming languages, with
-                                     Object-Oriented Programming (OOP) being my core expertise.<br/>
-                                    Skilled in version control systems and workflow automation.
-                                     First hand experience in project management, SCRUM framework and Agile methodology.
-                                    Embedded programming enthusiast. Future backend engineer.
+                                <br />                                    
+                                    Tenacious programmer with experience in multiple Object-Oriented Programming (OOP) languages.<br/><br/>
+                                    Proficient in version control systems and workflow automation with strong commitment to the GitHub platform.<br/><br/>
+                                    Hands-on experience in project management within the SCRUM framework and Agile methodology.<br /><br />
+                                    Passionate about embedded programming and technology.<br /><br /><br />
+                                    Aspiring backend engineer.<br />
                                 </p>
                             </div>
 
@@ -40,13 +40,14 @@ function RenderBody() {
                                             <h3>2026</h3>
                                         </div>
 
-                                        <p> Glasgow Clyde College </p>
+                                        <p> University of Highlands and Islands </p>
 
                                         <table class="qualTable">
                                                 <tr>
                                                     <th>BsC</th>
                                                     <td class="tableSplit"></td>
                                                     <td>Applied Software Development</td>
+                                                    
                                                 </tr>                                        
 
                                             </table>

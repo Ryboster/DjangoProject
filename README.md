@@ -22,8 +22,7 @@ w3schools (n.d.) CSS ::after Selector. Available at: https://www.w3schools.com/c
 w3schools (n.d.) How TO - Timeline. Available at: https://www.w3schools.com/howto/howto_css_timeline.asp (Accessed: 14th August 2024).<br>
 w3schools (n.d.) CSS left Property. Available at: https://www.w3schools.com/cssref/pr_pos_left.php (Accessed: 14th August 2024).<br>
 w3schools (n.d.) HTML Styles - CSS. Available at: https://www.w3schools.com/html/html_css.asp (Accessed: 15th August 2024).<br>
-
-
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_text/Wrapping_breaking_text
 
 
 

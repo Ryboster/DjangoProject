@@ -48,7 +48,6 @@ function CreateNavBar() {
                     Tools
                 </button>
             </div>
-
         </div>
     );
 }

@@ -15,6 +15,7 @@
 /* Selife */
 .self_photo {
     width:calc(13vw);
+    
     text-align: center;
 }
 
@@ -137,7 +138,7 @@
 .tooltip {
     visibility: hidden;
     padding: 10px 10px;
-    background-color: #383836;
+    background-color: #000000;
     color: #CCCCCC;
     text-align: left;
     border-radius: 5px;

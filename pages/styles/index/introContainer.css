@@ -1,13 +1,12 @@
 /* The entire container */
 .introContainer{
     width:calc(65vw);
+    background-color: #383836;
     height: auto;
     float: left;
     color: #CCCCCC;
 }
-.introContainer:hover {
-    background-color: #0000001a;
-}
+
 .introContainer p{
     text-align: left;
     margin-left: 3vw;
@@ -64,18 +63,6 @@
 
 
 
-
-/* Overview Section - Content */
-
-.overviewSection {
-    padding-bottom:calc(5vh);
-}
-
-
-
-
-
-
 /* Education Section */
 .educationSection {
     padding-bottom: calc(5vh);
@@ -101,6 +88,7 @@
 }
 .overviewSection {
     padding-bottom:calc(5vh);
+    font-family:"Consolas";
 }
 
 
