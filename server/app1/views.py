@@ -2,12 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from bs4 import BeautifulSoup
 import os
-
 import sqlite3
-
+from CRUD import CRUD
 
 class Pages:
     def __init__(self):
+        self.Database = CRUD()
+
         self.rootdir = os.path.join("app1", "pages")
 
         pass
