@@ -11,11 +11,13 @@
         {% load static %}
 
         <!-- Load stylesheets -->
-        <link rel="stylesheet" href="{% static 'styles/ui/navbar.css' %}">
-        <link rel="stylesheet" href="{% static 'styles/ui/footer.css' %}">
-        <link rel="stylesheet" href="{% static 'styles/ui/background.css' %}">
-        <link rel="stylesheet" href="{% static 'styles/ui/body.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/template/navbar.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/template/footer.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/template/background.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/template/body.css' %}">
 
+        {% block styles %}
+        {% endblock %}
 
         <meta charset="UTF-8">
         <title> Home </title>
@@ -82,15 +84,17 @@
     <body class="body" style="background-color: #2C2C2C;">
 
         <!-- Second background -->
-        <div class="columns", style="display:flex">
+        <div class="columns" style="display:flex">
+
             <div class="background"> </div>
-            <div class="textContainer"> 
-                {% block content %}
+
+            <div class="textContainer", style="padding-left: calc(9vw); width: calc(75vw); display:block; text-align:center"> 
+                {% block text_content %}
 
                 {% endblock %}
             </div>
-            <div class="photoContainer"> 
-                {% block content %}
+            <div class="sidebar"> 
+                {% block sidebar_content %}
 
                 {% endblock %}
             </div>
