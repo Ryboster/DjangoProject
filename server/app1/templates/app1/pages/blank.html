@@ -1,7 +1,7 @@
 <!-- Blazejowski, G. 2024 -->
 
 <!DOCTYPE html>
-<html>
+<html style="display: block">
 
     <!-- Initialization -->
     <head>
@@ -93,12 +93,12 @@
         </div>
         
   
+    
     </body>
 
-
     <!-- Footer -->
-    <footer>
-    <div id="footer" class="footer">
+    <footer class="footer">
+    <div id="footer" class="footerContent">
         All mine
 
         <!-- Load stylesheets -->
@@ -108,11 +108,13 @@
         <link rel="stylesheet" href="{% static 'styles/template/body.css' %}">
         <link rel="stylesheet" href="{% static 'styles/template/textContainer.css' %}">
         <link rel="stylesheet" href="{% static 'styles/template/logo.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/template/columns.css' %}">
         {% block styles %}
 
         {% endblock styles %}
     </div>
     
+
 
 
 </footer>
