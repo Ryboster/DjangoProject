@@ -1,16 +1,16 @@
 {% extends 'app1/pages/blank.html' %}
 {% load static %}
 
-{% block content %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'styles/home/sidebar.css' %}">
+{% endblock %}
 
-<link rel="stylesheet" href="{% static 'styles/home/photocontainer.css' %}">
+{% block text_content %}
+<h1> TEST </h1>
+<p> lorem ipsum</p>
+{% endblock %}
 
-<div class="textContainer" style="padding-left: calc(9vw); width: calc(75vw); display:block; text-align:center"> 
-    <h1> TEST </h1>
-    <p> lorem ipsum</p>
-</div>
- 
-<div class="photoContainer">
+    {% block sidebar_content %}
     <div class="handsomeManContainer">
         <img src="{% static 'assets/handsome_man.png' %}" class="self_photo" /> <br />
     </div>
@@ -116,6 +116,5 @@
             </div>
         </div>
     </div>
-</div>
+    {% endblock sidebar_content %}
 
-{% endblock %}
