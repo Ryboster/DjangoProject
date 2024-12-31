@@ -9,9 +9,6 @@
 }
 
 
-
-
-
 /* Selife */
 .self_photo {
     width:calc(13vw);
@@ -84,6 +81,9 @@
     justify-content: center;
     
 }
+.coreSkillsSection p {
+color: #CCCCCC;
+}
 
 .coreSkill {
     max-width: calc(4vw);
@@ -124,7 +124,6 @@
 .skillFill {
     height: 100%;
     background-color: #9A9FA7;
-
 }
 .skillProgressBar i {
     position: absolute;
