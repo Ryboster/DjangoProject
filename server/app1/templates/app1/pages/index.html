@@ -2,15 +2,15 @@
 {% load static %}
 
 {% block styles %}
-<link rel="stylesheet" href="{% static 'styles/home/sidebar.css' %}">
-{% endblock %}
+    <link rel="stylesheet" href="{% static 'styles/home/sidebar.css' %}">
+{% endblock styles %}
 
-{% block text_content %}
+{% block textContent %}
 <h1> TEST </h1>
 <p> lorem ipsum</p>
 {% endblock %}
 
-    {% block sidebar_content %}
+    {% block sidebarContent %}
     <div class="handsomeManContainer">
         <img src="{% static 'assets/handsome_man.png' %}" class="self_photo" /> <br />
     </div>
@@ -70,51 +70,61 @@
 
         <p style="color: #CCCCCC;">Languages</p>
         <hr />
+            <div class="skillItem">
+                Python 
+                <div class="tooltip">PYTHON</div>
+                <div class="skillProgressBar">
+                    <div class="skillFill" style="width: 75%;"></div>
+                    <i>75%</i>
+                </div>
+            </div>
 
-        <div class="skillItem">
-            Python 
-            <div class="tooltip">PYTHON</div>
-            <div class="skillProgressBar">
-                <div class="skillFill" style="width: 75%;"></div>
-                <i>75%</i>
+            <div class="skillItem">
+                Java 
+                <div class="tooltip">PYTHON</div>
+                <div class="skillProgressBar">
+                    <div class="skillFill" style="width: 7.5%;"></div>
+                    <i>7.5%</i>
+                </div>
+            </div>
+
+            <div class="skillItem">
+                HTML 
+                <div class="tooltip">PYTHON</div>
+                <div class="skillProgressBar">
+                    <div class="skillFill" style="width: 7.5%;"></div>
+                    <i>7.5%</i>
+                </div>
+            </div>
+
+            <div class="skillItem">
+                CSS 
+                <div class="tooltip">PYTHON</div>
+                <div class="skillProgressBar">
+                    <div class="skillFill" style="width: 5%;"></div>
+                    <i>5%</i>
+                </div>
+            </div>
+
+            <div class="skillItem">
+                JavaScript 
+                <div class="tooltip">PYTHON</div>
+                <div class="skillProgressBar">
+                    <div class="skillFill" style="width: 5%;"></div>
+                    <i>5%</i>
             </div>
         </div>
 
+        <p style="color: #CCCCCC;">Frameworks</p>
+        <hr />
         <div class="skillItem">
-            Java 
-            <div class="tooltip">PYTHON</div>
-            <div class="skillProgressBar">
-                <div class="skillFill" style="width: 7.5%;"></div>
-                <i>7.5%</i>
-            </div>
-        </div>
-
-        <div class="skillItem">
-            HTML 
-            <div class="tooltip">PYTHON</div>
-            <div class="skillProgressBar">
-                <div class="skillFill" style="width: 7.5%;"></div>
-                <i>7.5%</i>
-            </div>
-        </div>
-
-        <div class="skillItem">
-            CSS 
+            Django 
             <div class="tooltip">PYTHON</div>
             <div class="skillProgressBar">
                 <div class="skillFill" style="width: 5%;"></div>
                 <i>5%</i>
-            </div>
         </div>
 
-        <div class="skillItem">
-            JavaScript 
-            <div class="tooltip">PYTHON</div>
-            <div class="skillProgressBar">
-                <div class="skillFill" style="width: 5%;"></div>
-                <i>5%</i>
-            </div>
-        </div>
     </div>
-    {% endblock sidebar_content %}
+    {% endblock sidebarContent %}
 

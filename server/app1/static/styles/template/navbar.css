@@ -9,6 +9,12 @@
     width: 100%;
 }
 
+.navbar .logoContainer {
+padding-right: 33vw;
+background-color: #000000d;
+height: 10vh;
+}
+
 /* Hover highlighter on bar */
 .navbar:hover{
     background-color: #0000001a;
@@ -22,4 +28,9 @@
 /* Hover highlighter on buttons */
 .navbar_button:hover{
     background-color: #9A9FA7;
+}
+
+.navbar .navbarItem {
+padding-right: calc(1vw/2);
+height: 10vh;
 }

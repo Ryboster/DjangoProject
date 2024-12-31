@@ -1,5 +1,6 @@
 /* Body */
 .body{
+    background-color: #2C2C2C;
     height:auto;
     width:calc(99vw);
     display: block;
