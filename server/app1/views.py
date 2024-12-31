@@ -15,3 +15,7 @@ class Pages:
     def home(self, request):
         pageFile = os.path.join(self.rootdir, "index.html")
         return render(request, pageFile)
+
+    def blank(self,request):
+        pageFile = os.path.join(self.rootdir, "blank.html")
+        return render(request, pageFile)

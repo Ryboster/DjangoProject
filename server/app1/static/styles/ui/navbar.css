@@ -5,6 +5,8 @@
     text-align: center;
     font-size: 25px;
     background-color: #2C2C2C;
+    display:flex;
+    width: 100%;
 }
 
 /* Hover highlighter on bar */

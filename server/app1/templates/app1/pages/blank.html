@@ -24,7 +24,7 @@
         <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0">
         
         <!-- Initialize Navbar -->
-        <div style="display:flex; width: 100%", class="navbar">
+        <div class="navbar">
     
             <div style="padding-right: calc(33vw); background-color: '#0000000d'; height: calc(10vh)">
                 <a href="https://google.com/">
@@ -82,11 +82,21 @@
     <body class="body" style="background-color: #2C2C2C;">
 
         <!-- Second background -->
-        <div class="background"> </div>
-        {% block content %}
+        <div class="columns", style="display:flex">
+            <div class="background"> </div>
+            <div class="textContainer"> 
+                {% block content %}
 
-        {% endblock %}
+                {% endblock %}
+            </div>
+            <div class="photoContainer"> 
+                {% block content %}
 
+                {% endblock %}
+            </div>
+        </div>
+        
+  
     </body>
 
 
