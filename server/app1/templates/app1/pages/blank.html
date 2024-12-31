@@ -1,0 +1,100 @@
+<!-- Blazejowski, G. 2024 -->
+
+<!DOCTYPE html>
+<html>
+
+    <!-- Initialization -->
+    <head>
+        
+
+        <!-- Load static content -->
+        {% load static %}
+
+        <!-- Load stylesheets -->
+        <link rel="stylesheet" href="{% static 'styles/ui/navbar.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/ui/footer.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/ui/background.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/ui/body.css' %}">
+
+
+        <meta charset="UTF-8">
+        <title> Home </title>
+
+        <!-- Initialize Viewport-->
+        <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0">
+        
+        <!-- Initialize Navbar -->
+        <div style="display:flex; width: 100%", class="navbar">
+    
+            <div style="padding-right: calc(33vw); background-color: '#0000000d'; height: calc(10vh)">
+                <a href="https://google.com/">
+                    <img id="logo" style="width: calc(5vw); height: calc(5vh); position: fixed" src="{% static 'assets/logo_transparent.png' %}" class="logo" />
+                </a>
+            </div>
+        
+            <div style="padding-right: calc(1vw/2); height: calc(10vh)">
+                <a href="https://google.com/"></a>
+                    <button class="navbar_button">
+                        Home
+                    </button>
+                </a>
+            </div>
+        
+            <div style="padding-right: calc(1vw/2); height: calc(10vh)">
+                <a href="https://google.com/">
+                <button class="navbar_button">
+                    Projects
+                </button>
+                </a>
+            </div>
+        
+            <div style="padding-right: calc(1vw/2); height: calc(10vh)">
+                <a href="https://google.com/">
+                <button class="navbar_button">
+                    Experience
+                </button>
+                </a>
+            </div>
+        
+            <div style="padding-right: calc(1vw/2); height: calc(10vh)">
+                <a href="https://google.com/">
+                <button class="navbar_button">
+                    Blog
+                </button>
+                </a>
+            </div>
+        
+            <div style="padding-right: calc(1vw/2); height: calc(10vh)">
+                <a href="https://google.com/">
+                <button class="navbar_button">
+                    Contact
+                </button>
+                </a>
+            </div>
+        </div>
+
+    </head>
+
+    
+    
+    
+    <!-- Body -->
+    <body class="body" style="background-color: #2C2C2C;">
+
+        <!-- Second background -->
+        <div class="background"> </div>
+        {% block content %}
+
+        {% endblock %}
+
+    </body>
+
+
+    <!-- Footer -->
+    <footer>
+    <div id="footer" class="footer">All mine</div>
+
+
+</footer>
+</html>
+
