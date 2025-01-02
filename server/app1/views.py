@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from bs4 import BeautifulSoup
 import os
 import sqlite3
+
 from CRUD import CRUD
 
 class Pages:
@@ -15,8 +16,28 @@ class Pages:
 
     def home(self, request):
         pageFile = os.path.join(self.rootdir, "index.html")
-        return render(request, pageFile)
+        context = {
+        'variable1': 'Hello, Django!'
+        }
+        return render(request, pageFile, context)
 
     def blank(self,request):
         pageFile = os.path.join(self.rootdir, "blank.html")
         return render(request, pageFile)
+
+    def blog(self, request):
+        pageFile = os.path.join(self.rootdir, "blog.html")
+
+
+        self.Database.Create("Blog", ("ID", "Title", "Pictures", "Paragraph", "Rating",),
+                                     ("test", "Test Title", "Test Pictures", "Test Paragraph", 0.5,))
+
+        title = self.Database.Read("Blog", "Title", "test")
+        _id = self.Database.Read("Blog", "ID", "test")
+
+        context = {
+            'text': title,
+            'sidebar': _id
+        }
+
+        return render(request, pageFile, context)
