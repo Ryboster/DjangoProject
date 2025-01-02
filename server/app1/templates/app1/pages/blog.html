@@ -4,12 +4,29 @@
 
 
 {% block textContent %}
+    <div id="Title", style="display: flex; align-items: center;">
+            <h1> {{ Title }} </h1> 
+            <button style="padding: 0%; width: 12px; height: 12px"> <img style="padding:0%" src="{% static 'assets/icons/edit_icon.svg' %}" > </button>
+    </div>
+    
+    <h3> {{ Rating }} / 5 </h3>
+    <p> {{ Pictures }} </p>
+    <p> {{ Paragraph }} </p>
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            var textContainerTag = document.getElementsByClassName("textContainer")[0];
+            textContainerTag.id = "{{ ID|escapejs }}";
+
+        });
+    </script>
+
     {{ text }}
 {% endblock %}
 
 
 {% block sidebarContent %}
+    
 
-    {{ sidebar }}
 
 {% endblock %}

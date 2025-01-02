@@ -32,12 +32,19 @@ class Pages:
         self.Database.Create("Blog", ("ID", "Title", "Pictures", "Paragraph", "Rating",),
                                      ("test", "Test Title", "Test Pictures", "Test Paragraph", 0.5,))
 
-        title = self.Database.Read("Blog", "Title", "test")
+        
         _id = self.Database.Read("Blog", "ID", "test")
+        title = self.Database.Read("Blog", "Title", "test")
+        rating = self.Database.Read("Blog", "Rating", "test")
+        pictures = self.Database.Read("Blog", "Pictures", "test")
+        paragraph = self.Database.Read("Blog", "Paragraph", "test")
 
         context = {
-            'text': title,
-            'sidebar': _id
+            "ID": "testID",
+            "Title": title,
+            "Rating": rating,
+            "Pictures": pictures,
+            'Paragraph': paragraph,
         }
 
         return render(request, pageFile, context)

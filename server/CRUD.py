@@ -161,17 +161,17 @@ class CRUD:
         
         self.closeConnection()
 
-crud = CRUD()
-crud.Create("Home", ("TextContent", "CoreSkills",), ("test3","test4",))
-x = crud.Read("Home", "TextContent", 1)
-print(x)
+#crud = CRUD()
+#crud.Create("Home", ("TextContent", "CoreSkills",), ("test3","test4",))
+#x = crud.Read("Home", "TextContent", 1)
+#print(x)#
 
-crud.Update("Home", "TextContent", "newValue", 1)
-x = crud.Read("Home", "TextContent", 1)
-print(x)
+#crud.Update("Home", "TextContent", "newValue", 1)
+#x = crud.Read("Home", "TextContent", 1)
+#print(x)#
 
-crud.Delete("Home", "TextContent", "newValue", 1)
-x = crud.Read("Home", "TextContent", 1)
-print(x)
-
-
+#crud.Delete("Home", "TextContent", "newValue", 1)
+#x = crud.Read("Home", "TextContent", 1)
+#print(x)#
+#
+#
