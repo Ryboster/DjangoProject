@@ -21,5 +21,6 @@ from app1 import views
 urlpatterns = [
     #path('admin/', admin.site.urls),
     path('', views.Pages().home, name='home'),
-    path('blank', views.Pages().blank, name="blank")
+    path('blank', views.Pages().blank, name="blank"),
+    path('blog', views.Pages().blog, name="blog")
 ]
