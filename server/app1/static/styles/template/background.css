@@ -1,6 +1,5 @@
 /* Background */
 .background {
-    float:left;
     height: calc(100vh);
     width:calc(8vw);
     background-color:#CCCCCC;

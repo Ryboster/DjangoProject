@@ -1,25 +1,65 @@
 {% extends 'app1/pages/blank.html' %}
 
 {% load static %}
-
-
 {% block textContent %}
-    <div id="Title", style="display: flex; align-items: center;">
-            <h1> {{ Title }} </h1> 
-            <button style="padding: 0%; width: 12px; height: 12px"> <img style="padding:0%" src="{% static 'assets/icons/edit_icon.svg' %}" > </button>
+
+    <div id="Title">
+        <h1 style="display:inline-flex;"> 
+            {{ Title }}
+            <div style="display: flex; flex-direction: column;">
+                <button style="display: inline-flex; padding: 0; width: auto; height: auto; align-items: center; justify-content: center;">
+                    <img style="padding:0" src="{% static 'assets/icons/edit_icon.svg' %}" >
+                </button>
+
+                <button style="display: inline-flex; padding: 0; width: auto; height: auto; align-items: center; justify-content: center;">
+                    <img style="padding:0" src="{% static 'assets/icons/trash_icon1.svg' %}" >
+                </button>
+            </div>
+        </h1>
     </div>
+
     
-    <h3> {{ Rating }} / 5 </h3>
+    <div id="Rating">
+        <h3 style="display:inline-flex;"> {{ Rating }} / 5 
+            <div style="display: flex; flex-direction: column;">
+                <button style="display: inline-flex; padding: 0; width: auto; height: auto; align-items: center; justify-content: center;">
+                    <img style="padding:0" src="{% static 'assets/icons/edit_icon.svg' %}" >
+                </button>
+            
+                <button style="display: inline-flex; padding: 0; width: auto; height: auto; align-items: center; justify-content: center;">
+                    <img style="padding:0" src="{% static 'assets/icons/trash_icon1.svg' %}" >
+                </button>
+            </div>
+        </h3>
+    </div>
+
+
     <p> {{ Pictures }} </p>
-    <p> {{ Paragraph }} </p>
+    
+    <div id="Paragraph" style="display:flex;">
+        {{ Paragraph }}
+
+        <div style="display: flex; flex-direction: column;">
+            <button style="display: inline-flex; padding: 0; width: auto; height: auto; align-items: center; justify-content: center;">
+                <img style="padding:0" src="{% static 'assets/icons/edit_icon.svg' %}" >
+            </button>
+        
+            <button style="display: inline-flex; padding: 0; width: auto; height: auto; align-items: center; justify-content: center;">
+                <img style="padding:0" src="{% static 'assets/icons/trash_icon1.svg' %}" >
+            </button>
+        </div>
+    </div>
+
+
 
     <script type="text/javascript">
+
         document.addEventListener("DOMContentLoaded", function () {
             var textContainerTag = document.getElementsByClassName("textContainer")[0];
             textContainerTag.id = "{{ ID|escapejs }}";
-
         });
     </script>
+        
 
     {{ text }}
 {% endblock %}

@@ -2,6 +2,7 @@
 {
 padding-left: 9vw;
 width: 75vw;
-display: block;
+display:inline-flex;
+flex-direction: column;
 text-align: center;
 }

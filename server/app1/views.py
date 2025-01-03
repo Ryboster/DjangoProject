@@ -29,10 +29,10 @@ class Pages:
         pageFile = os.path.join(self.rootdir, "blog.html")
 
 
-        self.Database.Create("Blog", ("ID", "Title", "Pictures", "Paragraph", "Rating",),
-                                     ("test", "Test Title", "Test Pictures", "Test Paragraph", 0.5,))
+        self.Database.Create(table="Blog", columns=("ID", "Title", "Pictures", "Paragraph", "Rating",),
+                                     values=("test", "Test Title", "Test Pictures", "<p> Test Paragraph </p>", 0.5,))
 
-        
+
         _id = self.Database.Read("Blog", "ID", "test")
         title = self.Database.Read("Blog", "Title", "test")
         rating = self.Database.Read("Blog", "Rating", "test")
