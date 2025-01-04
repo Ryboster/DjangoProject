@@ -1,1 +1,3 @@
-__pycache__/
+__pycache__/*
+app1/__pycache__/*
+serv1/__pycache__/*
