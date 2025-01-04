@@ -1,0 +1,15 @@
+
+.adminButtonsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.adminButtonsContainer .Button {
+
+    display: inline-flex;
+    padding: 0;
+    width: auto;
+    height: auto; 
+    align-items: center; 
+    justify-content: center;
+}
