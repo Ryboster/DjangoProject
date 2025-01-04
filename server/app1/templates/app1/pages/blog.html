@@ -4,6 +4,7 @@
 
 {% block styles %}
 <link rel="stylesheet" href="{% static 'styles/blog/buttons.css' %}">
+<link rel="stylesheet" href="{% static 'styles/blog/sidebar.css' %}">
 {% endblock styles %}
 
 {% block textContent %}
@@ -16,7 +17,7 @@
                 <button class="Button" onclick="toggleEditForm(this)">
                     <img style="padding:0" src="{% static 'assets/icons/edit_icon.svg' %}" >
                 </button>
-                <button class="Button">
+                <button class="Button" onclick="toggleDeleteForm(this)">
                     <img style="padding:0" src="{% static 'assets/icons/trash_icon1.svg' %}" >
                 </button>
             </div>
@@ -30,10 +31,10 @@
             {{ Rating }} / 5
 
             <div class="adminButtonsContainer">
-                <button onclick="toggleEditForm(this)"  class="Button">
+                <button class="Button" onclick="toggleEditForm(this)">
                     <img style="padding:0" src="{% static 'assets/icons/edit_icon.svg' %}" >
                 </button>
-                <button class="Button">
+                <button class="Button" onclick="toggleDeleteForm(this)">
                     <img style="padding:0" src="{% static 'assets/icons/trash_icon1.svg' %}" >
                 </button>
             </div>
@@ -45,14 +46,14 @@
     <p> {{ Pictures }} </p>
     
     <div id="Paragraph">
-        <div style="display:flex;"> 
+        <div style="display:flex; justify-content: center;"> 
             {{ Paragraph }}
 
             <div class="adminButtonsContainer">
-                <button onclick="toggleEditForm(this)"  class="Button">
+                <button class="Button" onclick="toggleEditForm(this)">
                     <img style="padding:0" src="{% static 'assets/icons/edit_icon.svg' %}" >
                 </button>
-                <button class="Button">
+                <button class="Button" onclick="toggleDeleteForm(this)">
                     <img style="padding:0" src="{% static 'assets/icons/trash_icon1.svg' %}" >
                 </button>
             </div>
@@ -80,8 +81,6 @@
         var table = "Blog";
         var column = button.closest("div").parentElement.parentElement.id;
         var ID = "{{ ID|escapejs }}";
-        console.log(column);
-
 
         form.querySelector('input[name="table"]').value = table;
         form.querySelector('input[name="column"]').value = column;
@@ -94,8 +93,41 @@
             form.style.display = 'none';
         }
     }
+
+    function toggleDeleteForm(button) {
+        var form = document.getElementById("deleteForm");
+
+        var table = "Blog";
+        var column = button.closest("div").parentElement.parentElement.id;
+        var ID = "{{ ID|escapejs }}";
+
+        form.querySelector('input[name="table"]').value = table;
+        form.querySelector('input[name="column"]').value = column;
+        form.querySelector('input[name="ID"]').value = ID;
+
+        if (form.style.display === 'none' || form.style.display === '') {
+            form.style.display = 'block';
+        } else {
+            form.style.display = 'none';
+        }
+    }
+
+    function toggleCreateForm(button) {
+        var form = document.getElementById("createForm");
+
+        var table = "Blog"
+
+        form.querySelector('input[name="table"]').value = table;
+    
+        if (form.style.display === 'none' || form.style.display === '') {
+            form.style.display = 'block';
+        } else {
+            form.style.display = 'none';
+        }
+    }
 </script>
         
+
 
 <div id="editForm" style="display: none;">
     <form method="POST" action="{% url 'update' %}">
@@ -110,12 +142,52 @@
     </form>
 </div>
 
+<div id="deleteForm" style="display:none">
+    <form method="POST" action="{% url 'delete' %}">
+        {% csrf_token %}
+        
+        <input type="hidden" name="ID" value="">
+        <input type="hidden" name="table" value="">
+        <input type="hidden" name="column" value="">
+
+        <button type="submit">Confirm</button>
+    </form>
+</div>
+
     {{ text }}
 {% endblock %}
 
-
 {% block sidebarContent %}
-    
+    <div class="sidebarContainer">
+
+        <h3 class="header">Content</h3>
+
+        <h4 class="header"> Games </h4>
+        <ul id="gamesList">
+            {% for endpoint, title in EndpointPairs %}
+            <li> <a href="/blog/{{ endpoint }}">{{ title }} </a></li>
+            {% endfor %}
+
+        </ul>
+
+        <button onclick="toggleCreateForm(this)">
+            +
+        </button>
+
+
+        <div id="createForm" style="display:none;">
+            <form method="POST" action="{% url 'create' %}">
+                {% csrf_token %}
+                
+                <input type="hidden" name="table" value="">
+
+                <input type="text" name="id" value="">
+                <input type="text" name="title" value="">
+        
+                <button type="submit">Confirm</button>
+            </form>
+        </div>
+    </div>
 
 
 {% endblock %}
