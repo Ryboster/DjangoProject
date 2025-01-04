@@ -57,12 +57,25 @@ class Pages:
 
         return render(request, pageFile, context)
 
-    
+
 
 class CRUD_Endpoints():
     def __init__(self, database):
         self.Database = database
         pass
+
+    def deletePost(self, request):
+        if request.method == 'POST':
+            submitted_values = request.POST
+            self.Database.Delete(table=submitted_values['table'],
+                                 _id=submitted_values['ID'])
+
+        referer = request.META.get('HTTP_REFERER')
+        if referer:
+            return HttpResponseRedirect(referer)
+
+        return HttpResponse("Invalid request", status=400)
+
 
     def update(self, request):
         if request.method == 'POST':
