@@ -1,0 +1,12 @@
+.sidebarContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #383836; 
+    height: auto; 
+    width:calc(15vw);
+}
+
+.sidebarContainer .header {
+
+    padding-left:1vw;
+}
