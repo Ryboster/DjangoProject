@@ -13,21 +13,21 @@ DB_HOME_INIT_QUERY = """
 CREATE TABLE IF NOT EXISTS Home 
         (
         ID INTEGER PRIMARY KEY AUTOINCREMENT,
-        TextContent TEXT,
-        CoreSkills TEXT, -- JSON AS TEXT
-        Languages  TEXT, -- JSON AS TEXT
-        Frameworks TEXT -- JSON AS TEXT
+        TextContent TEXT TEXT CHECK(typeof(TextContent) = 'text' OR NULL),
+        CoreSkills TEXT CHECK(typeof(CoreSkills) = 'text' OR NULL), -- JSON AS TEXT
+        Languages  TEXT CHECK(typeof(Languages) = 'text' OR NULL), -- JSON AS TEXT
+        Frameworks TEXT CHECK(typeof(Frameworks) = 'text' OR NULL) -- JSON AS TEXT
         )
 """
 
 DB_BLOG_INIT_QUERY = """
 CREATE TABLE IF NOT EXISTS Blog
     (
-    ID STRING UNIQUE,
-    Title STRING,
-    Pictures STRING,
-    Paragraph STRING,
-    Rating REAL
+    ID STRING UNIQUE CHECK(typeof(ID) = 'text' OR NULL),
+    Title STRING CHECK(typeof(Title) = 'text' OR NULL),
+    Pictures STRING CHECK(typeof(Pictures) = 'text' OR NULL),
+    Paragraph STRING CHECK(typeof(Paragraph) = 'text' OR NULL),
+    Rating REAL CHECK(typeof(Rating) = 'real' OR NULL)
     )
 """
 class CRUD:
@@ -141,37 +141,41 @@ class CRUD:
 
 
 
-    def Delete(self, table, column, existingValue, _id):
+    def Delete(self, table, _id):
         ''' Delete a record from the database '''
         print(Fore.BLUE + f"DELETING record FROM {table} ({column}) ... " + Style.RESET_ALL, end=' ')
 
         self.openConnection()
         query = f"""
         DELETE FROM {table} 
-        WHERE {column} = ?
-        AND ID = ?
+        WHERE ID = ?
         """
-        values = (existingValue, _id)
+        values = (_id,)
         
         if self.execute(query, values):
             print(Fore.GREEN + "Success!" + Style.RESET_ALL)
         else:
             print(Fore.RED + "Failed!" + Style.RESET_ALL)
         
-        
         self.closeConnection()
 
-#crud = CRUD()
-#crud.Create("Home", ("TextContent", "CoreSkills",), ("test3","test4",))
-#x = crud.Read("Home", "TextContent", 1)
-#print(x)#
 
-#crud.Update("Home", "TextContent", "newValue", 1)
-#x = crud.Read("Home", "TextContent", 1)
-#print(x)#
+    def fetchAllIds(self, table):
+        print(Fore.BLUE + f"Fetching all IDs from {table} ..." + Style.RESET_ALL, end=' ')
 
-#crud.Delete("Home", "TextContent", "newValue", 1)
-#x = crud.Read("Home", "TextContent", 1)
-#print(x)#
-#
-#
+        self.openConnection()
+
+        query = f"""
+        SELECT ID FROM {table}
+        """
+
+        if self.execute(query):
+            print(Fore.GREEN + "Success!" + Style.RESET_ALL)
+        else:
+            print(Fore.RED + "Failed!" + Style.RESET_ALL)
+        
+        product = self.cursor.fetchall()
+        product = [x[0] for x in product]
+        self.closeConnection()
+
+        return product
