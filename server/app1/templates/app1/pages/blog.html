@@ -5,7 +5,26 @@
 {% block styles %}
 <link rel="stylesheet" href="{% static 'styles/blog/buttons.css' %}">
 <link rel="stylesheet" href="{% static 'styles/blog/sidebar.css' %}">
+
+
+<button class="Button" onclick="toggleDeletePostForm(this)">
+    <img style="padding:0" src="{% static 'assets/icons/trash_icon1.svg' %}" >
+</button>
+
+<div id="deletePostForm" style="display:none">
+    <form method="POST" action="{% url 'delete_post' %}">
+        {% csrf_token %}
+        
+        <input type="hidden" name="ID" value="">
+        <input type="hidden" name="table" value="">
+
+        <button type="submit">Confirm</button>
+    </form>
+</div>
 {% endblock styles %}
+
+
+
 
 {% block textContent %}
 
@@ -62,17 +81,14 @@
     </div>
 
 
-
     
 
-
-    <script type="text/javascript">
-
-        document.addEventListener("DOMContentLoaded", function () {
-            var textContainerTag = document.getElementsByClassName("textContainer")[0];
-            textContainerTag.id = "{{ ID|escapejs }}";
-        });
-    </script>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+        var textContainerTag = document.getElementsByClassName("textContainer")[0];
+        textContainerTag.id = "{{ ID|escapejs }}";
+    });
+</script>
 
 <script>
     function toggleEditForm(button) {
@@ -104,6 +120,22 @@
         form.querySelector('input[name="table"]').value = table;
         form.querySelector('input[name="column"]').value = column;
         form.querySelector('input[name="ID"]').value = ID;
+
+        if (form.style.display === 'none' || form.style.display === '') {
+            form.style.display = 'block';
+        } else {
+            form.style.display = 'none';
+        }
+    }
+
+    function toggleDeletePostForm(button) {
+        var form = document.getElementById("deletePostForm");
+
+        var table = "Blog";
+        var ID = "{{ ID|escapejs }}";
+        
+        form.querySelector('input[name="ID"]').value = ID;
+        form.querySelector('input[name="table"]').value = table;
 
         if (form.style.display === 'none' || form.style.display === '') {
             form.style.display = 'block';
@@ -154,7 +186,11 @@
     </form>
 </div>
 
-    {{ text }}
+
+
+
+{{ text }}
+
 {% endblock %}
 
 {% block sidebarContent %}
@@ -188,6 +224,5 @@
             </form>
         </div>
     </div>
-
 
 {% endblock %}
