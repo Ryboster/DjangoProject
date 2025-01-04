@@ -25,6 +25,10 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('blank', views.blank, name="blank"),
     path('blog', views.blog, name="blog"),
-    
+    path('blog/<str:post_id>/', views.blog, name='blog_detail'),
+
     path('update/', views.DatabaseAPI.update, name='update'),
+    path('delete/', views.DatabaseAPI.delete, name='delete'),
+    path('create/', views.DatabaseAPI.create, name="create"),
+    
 ]
