@@ -26,19 +26,25 @@ class Pages:
         pageFile = os.path.join(self.rootdir, "blank.html")
         return render(request, pageFile)
 
-    def blog(self, request):
+    def blog(self, request, post_id='test'):
         pageFile = os.path.join(self.rootdir, "blog.html")
-
 
         self.Database.Create(table="Blog", columns=("ID", "Title", "Pictures", "Paragraph", "Rating",),
                                      values=("test", "Test Title", "Test Pictures", "<p> Test Paragraph </p>", 0.5,))
 
+        _id = self.Database.Read("Blog", "ID", post_id)
+        title = self.Database.Read("Blog", "Title", post_id)
+        rating = self.Database.Read("Blog", "Rating", post_id)
+        pictures = self.Database.Read("Blog", "Pictures", post_id)
+        paragraph = self.Database.Read("Blog", "Paragraph", post_id)
 
-        _id = self.Database.Read("Blog", "ID", "test")
-        title = self.Database.Read("Blog", "Title", "test")
-        rating = self.Database.Read("Blog", "Rating", "test")
-        pictures = self.Database.Read("Blog", "Pictures", "test")
-        paragraph = self.Database.Read("Blog", "Paragraph", "test")
+        endpoints = self.Database.fetchAllIds("Blog")
+        
+        titles = []
+        for endpoint in endpoints:
+            titles.append(self.Database.Read("Blog", "Title", endpoint))
+
+        endpointPairs = zip(endpoints, titles)
 
         context = {
             "ID": _id,
@@ -46,6 +52,7 @@ class Pages:
             "Rating": rating,
             "Pictures": pictures,
             'Paragraph': paragraph,
+            "EndpointPairs": endpointPairs,
         }
 
         return render(request, pageFile, context)
@@ -72,3 +79,29 @@ class CRUD_Endpoints():
             return HttpResponseRedirect(referer)
 
         return HttpResponse("Invalid request", status=400)
+
+    def delete(self, request):
+        if request.method == 'POST':
+            submitted_values = request.POST
+            print(submitted_values)
+
+            self.Database.Update(table=submitted_values['table'],
+                                column=submitted_values['column'],
+                                newValue= None,
+                                _id=submitted_values['ID'])
+            
+            referer = request.META.get('HTTP_REFERER')
+        if referer:
+            return HttpResponseRedirect(referer)
+
+    def create(self, request):
+        if request.method == 'POST':
+            submitted_values = request.POST
+            
+            self.Database.Create(table=submitted_values['table'],
+                                 columns=("ID", "Title",),
+                                 values=(submitted_values['id'], submitted_values['title']))
+
+            referer = request.META.get('HTTP_REFERER')
+        if referer:
+            return HttpResponseRedirect(referer)
