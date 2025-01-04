@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.http import HttpResponseRedirect
+
 from bs4 import BeautifulSoup
 import os
 import sqlite3
@@ -9,9 +11,8 @@ from CRUD import CRUD
 class Pages:
     def __init__(self):
         self.Database = CRUD()
-
+        self.DatabaseAPI = CRUD_Endpoints(self.Database)
         self.rootdir = os.path.join("app1", "pages")
-
         pass
 
     def home(self, request):
@@ -40,7 +41,7 @@ class Pages:
         paragraph = self.Database.Read("Blog", "Paragraph", "test")
 
         context = {
-            "ID": "testID",
+            "ID": _id,
             "Title": title,
             "Rating": rating,
             "Pictures": pictures,
@@ -48,3 +49,26 @@ class Pages:
         }
 
         return render(request, pageFile, context)
+
+    
+
+class CRUD_Endpoints():
+    def __init__(self, database):
+        self.Database = database
+        pass
+
+    def update(self, request):
+        if request.method == 'POST':
+            
+            submitted_values = request.POST
+
+            self.Database.Update(table=submitted_values['table'],
+                        column=submitted_values['column'],
+                        newValue=submitted_values['new_value'],
+                        _id=submitted_values['ID'])
+            
+        referer = request.META.get('HTTP_REFERER')
+        if referer:
+            return HttpResponseRedirect(referer)
+
+        return HttpResponse("Invalid request", status=400)
