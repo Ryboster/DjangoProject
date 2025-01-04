@@ -143,7 +143,7 @@ class CRUD:
 
     def Delete(self, table, _id):
         ''' Delete a record from the database '''
-        print(Fore.BLUE + f"DELETING record FROM {table} ({column}) ... " + Style.RESET_ALL, end=' ')
+        print(Fore.BLUE + f"DELETING ID {_id} FROM {table} ... " + Style.RESET_ALL, end=' ')
 
         self.openConnection()
         query = f"""
