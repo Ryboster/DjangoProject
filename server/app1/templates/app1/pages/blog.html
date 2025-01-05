@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="{% static 'styles/blog/textContent.css' %}">
 
 
-<button class="Button" onclick="toggleDeletePostForm(this)">
+<button class="Button" onclick="toggleDeletePostForm()">
     <img style="padding:0" src="{% static 'assets/icons/trash_icon1.svg' %}" >
 </button>
 
@@ -58,16 +58,31 @@
     </div>
 
 
-    <div style="display:flex; flex-direction:row; margin-left: auto;margin-right: auto;">
-        <img onclick="selectImage(this)" src="{% static 'assets/furi.png' %}" id="secondaryContainer" style="max-width:300px; max-height:300px;"/>
-        <img onclick="selectImage(this)" src="{% static 'assets/scattered_lands.png' %}" id="primaryContainer" style="max-width: 500px; max-height: 500px;"/> 
-        <img onclick="selectImage(this)" src="{% static 'assets/ds1.png' %}" id="secondaryContainer" style="max-width:300px; max-height:300px;"/>
+    <div id="Pictures" style="display:flex; flex-direction:row; margin-left: auto;margin-right: auto;">
+        <div id="Images" style="display:flex; flex-direction:row; margin-left: auto;margin-right: auto;">
+
+            <button onclick="previousImage()" id="previousImageButton"> < </button>
+            <img onclick="selectImage(this)" src="{% static 'assets/furi.png' %}" id="secondaryContainerLeft" style="max-width:300px; max-height:300px;"/>
+            <img onclick="selectImage(this)" src="{% static 'assets/scattered_lands.png' %}" id="primaryContainer" style="max-width: 500px; max-height: 500px;"/> 
+            <img onclick="selectImage(this)" src="{% static 'assets/ds1.png' %}" id="secondaryContainerRight" style="max-width:300px; max-height:300px;"/>
+            <button onclick="nextImage()" id="nextImageButton"> > </button>
+        </div>
+
+        <div class="adminButtonsContainer">
+            <button class="Button" onclick="OpenAddPictureOverlay(this)">
+                +
+            </button>
+            <button class="Button" onclick="OpenEditOverlay(this)">
+                <img style="padding:0" src="{% static 'assets/icons/edit_icon.svg' %}" >
+            </button>
+            <button class="Button" onclick="toggleDeleteForm(this)">
+                <img style="padding:0" src="{% static 'assets/icons/trash_icon1.svg' %}" >
+            </button>
+        </div>
     </div>
 
     <p>{{ Pictures|trim }} <br></p>
 
-        
-    
     
     <div id="Paragraph" style="display:flex; justify-content: center;">
         <div id="content" class="content"> {{ Paragraph|trim }}</div>
@@ -85,6 +100,9 @@
 
     
 
+<!-- ACHTUNG!!!     -->
+<div id="imagesList" type="application/json">{{ Pictures|json_script }}</div>
+
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function () {
         var textContainerTag = document.getElementsByClassName("textContainer")[0];
@@ -93,114 +111,9 @@
 </script>
 
 
-<script>
-
-    function selectImage(image)
-    {
-        overlay = document.getElementById("imageOverlay");
-        overlay.style.display = '';
-        overlay.firstElementChild.src = image.src;
-    }
-
-    function OpenEditOverlay(button) {
-
-        var form = document.getElementById('editFormOverlay');
-
-        var table = "Blog";
-        var column = button.closest("div").parentElement.id;
-        var ID = "{{ ID|escapejs }}";
-        var currentValue = button.closest("div").parentElement.querySelector("#content").textContent;
+<script src="{% static 'js/blog/blog.js' %}"></script>
 
 
-        if (column === "Paragraph") {
-            form.querySelector('input[name="new_value"]').disabled = true;
-            form.querySelector('input[name="new_value"]').style.display = "none";
-
-            textarea = form.querySelector('textarea[name="new_value"]')
-
-            
-            textarea.style.display = '';
-            textarea.style.resize = "none";
-            textarea.style.width = '100%';
-            textarea.style.minHeight = "200px";
-            
-            textarea.disabled = false;
-
-            textarea.value = currentValue;
-            textarea.style.height = '';
-            textarea.style.height = textarea.scrollHeight + 'px';
-
-        } else {
-            form.querySelector('input[name="new_value"]').disabled = false;
-            form.querySelector('input[name="new_value"]').style.display = "";
-            
-            form.querySelector('textarea[name="new_value"]').style.display = 'none';
-            form.querySelector('textarea[name="new_value"]').disabled = true;
-
-            form.querySelector('input[name="new_value"]').value = currentValue;
-        }
-
-        
-        form.querySelector('input[name="table"]').value = table;
-        form.querySelector('input[name="column"]').value = column;
-        form.querySelector('input[name="ID"]').value = ID;
-        
-
-        if (form.style.display === 'none' || form.style.display === '') {
-            form.style.display = '';
-        }
-    }
-
-
-    function toggleDeleteForm(button) {
-        var form = document.getElementById("deleteFormOverlay");
-
-        var table = "Blog";
-        var column = button.closest("div").parentElement.id;
-        var ID = "{{ ID|escapejs }}";
-
-        form.querySelector('input[name="table"]').value = table;
-        form.querySelector('input[name="column"]').value = column;
-        form.querySelector('input[name="ID"]').value = ID;
-
-        if (form.style.display === 'none' || form.style.display === '') {
-            form.style.display = '';
-        } else {
-            form.style.display = 'none';
-        }
-    }
-
-    function toggleDeletePostForm(button) {
-        var form = document.getElementById("deletePostForm");
-
-        var table = "Blog";
-        var ID = "{{ ID|escapejs }}";
-        
-        form.querySelector('input[name="ID"]').value = ID;
-        form.querySelector('input[name="table"]').value = table;
-
-        if (form.style.display === 'none' || form.style.display === '') {
-            form.style.display = 'block';
-        } else {
-            form.style.display = 'none';
-        }
-    }
-
-    function toggleCreateForm(button) {
-        var form = document.getElementById("createForm");
-
-        var table = "Blog"
-
-        form.querySelector('input[name="table"]').value = table;
-    
-        if (form.style.display === 'none' || form.style.display === '') {
-            form.style.display = 'block';
-        } else {
-            form.style.display = 'none';
-        }
-    }
-
-</script>
         
 <!-- Edit Form -->
 <div id="editFormOverlay", class="overlay" style="display:none", onclick="this.style.display = 'none'">
@@ -209,7 +122,25 @@
             {% csrf_token %}
             <input type="text" name="new_value" required style="margin-top:0;">
             <textarea oninput="this.style.height = '';this.style.height = this.scrollHeight + 'px'" type="text" name="new_value" disabled required style="display:none;"></textarea>
+            <div id="editPicturesContainer" style="display:none"></div>
 
+            <input type="hidden" name="ID" value="">
+            <input type="hidden" name="table" value="">
+            <input type="hidden" name="column" value="">
+
+            <button type="submit">Confirm</button>
+        </form>
+    </div>
+</div>
+
+<!-- Add Picture Form-->
+<div id="addPictureFormOverlay", class="overlay" style="display:none", onclick="this.style.display = 'none'">
+    <div class="formContainer" onclick="event.stopPropagation();">
+
+        <form  id="addPictureForm" method="POST" action="{% url 'add_picture' %}">
+            {% csrf_token %}
+
+            <input type="text" name="new_picture" required style="margin-top:0;">
             <input type="hidden" name="ID" value="">
             <input type="hidden" name="table" value="">
             <input type="hidden" name="column" value="">
@@ -257,7 +188,7 @@
 
         </ul>
 
-        <button onclick="toggleCreateForm(this)">
+        <button onclick="toggleCreateForm()">
             +
         </button>
 
