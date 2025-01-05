@@ -113,7 +113,7 @@ class CRUD_Endpoints():
             
             self.Database.Create(table=submitted_values['table'],
                                  columns=("ID", "Title",),
-                                 values=(submitted_values['id'], submitted_values['title']))
+                                 values=(submitted_values['ID'], submitted_values['title']))
 
             referer = request.META.get('HTTP_REFERER')
         if referer:
