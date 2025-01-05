@@ -4,6 +4,7 @@
     background-color: #383836; 
     height: auto; 
     width:calc(15vw);
+    margin-left: auto;
 }
 
 .sidebarContainer .header {
