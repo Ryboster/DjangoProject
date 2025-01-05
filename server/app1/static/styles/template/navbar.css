@@ -2,16 +2,14 @@
 .navbar {
     padding: 2px 2px;
     overflow: hidden;
-    text-align: center;
-    font-size: 25px;
-    background-color: #2C2C2C;
+    text-align: center;    
     display:flex;
     width: 100%;
+    height: calc(8vh);
 }
 
 .navbar .logoContainer {
-padding-right: 33vw;
-background-color: #000000d;
+margin-right: auto;
 height: 10vh;
 }
 
@@ -22,7 +20,10 @@ height: 10vh;
 
 /* Background colour on buttons */
 .navbar_button {
+    color: #CCCCCC;
+    padding: 1vw 1vw 1vw 1vw;
     background-color: #0000000d;
+    font-size: 24px;
 }
 
 /* Hover highlighter on buttons */
