@@ -194,7 +194,7 @@
 
 
         <div id="createForm" style="display:none;">
-            <form method="POST" action="{% url 'create' %}">
+            <form method="POST" action="{% url 'create_post' %}">
                 {% csrf_token %}
                 
                 <input type="hidden" name="table" value="">
