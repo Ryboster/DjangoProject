@@ -1,4 +1,4 @@
-.formOverlay {
+.overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -11,7 +11,7 @@
     z-index: 1000;
 }
 
-.formOverlay .formContainer {
+.overlay .formContainer {
 
     background: rgba(204,204,204,0.5);
     padding: 20px;
