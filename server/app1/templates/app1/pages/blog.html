@@ -7,7 +7,7 @@
 {% block styles %}
 <link rel="stylesheet" href="{% static 'styles/blog/buttons.css' %}">
 <link rel="stylesheet" href="{% static 'styles/blog/sidebar.css' %}">
-<link rel="stylesheet" href="{% static 'styles/blog/editFormOverlay.css' %}">
+<link rel="stylesheet" href="{% static 'styles/blog/overlay.css' %}">
 <link rel="stylesheet" href="{% static 'styles/blog/textContent.css' %}">
 
 
@@ -58,7 +58,16 @@
     </div>
 
 
-    <p>{{ Pictures|trim }}</p>
+    <div style="display:flex; flex-direction:row; margin-left: auto;margin-right: auto;">
+        <img onclick="selectImage(this)" src="{% static 'assets/furi.png' %}" id="secondaryContainer" style="max-width:300px; max-height:300px;"/>
+        <img onclick="selectImage(this)" src="{% static 'assets/scattered_lands.png' %}" id="primaryContainer" style="max-width: 500px; max-height: 500px;"/> 
+        <img onclick="selectImage(this)" src="{% static 'assets/ds1.png' %}" id="secondaryContainer" style="max-width:300px; max-height:300px;"/>
+    </div>
+
+    <p>{{ Pictures|trim }} <br></p>
+
+        
+    
     
     <div id="Paragraph" style="display:flex; justify-content: center;">
         <div id="content" class="content"> {{ Paragraph|trim }}</div>
@@ -85,6 +94,13 @@
 
 
 <script>
+
+    function selectImage(image)
+    {
+        overlay = document.getElementById("imageOverlay");
+        overlay.style.display = '';
+        overlay.firstElementChild.src = image.src;
+    }
 
     function OpenEditOverlay(button) {
 
@@ -187,7 +203,7 @@
 </script>
         
 <!-- Edit Form -->
-<div id="editFormOverlay", class="formOverlay" style="display:none", onclick="this.style.display = 'none'">
+<div id="editFormOverlay", class="overlay" style="display:none", onclick="this.style.display = 'none'">
     <div class="formContainer" onclick="event.stopPropagation();">
         <form  id="editForm" method="POST" action="{% url 'update' %}">
             {% csrf_token %}
@@ -205,7 +221,7 @@
 
 
 <!-- Truncate Content Form -->
-<div id="deleteFormOverlay", class="formOverlay" style="display:none", onclick="this.style.display = 'none'">
+<div id="deleteFormOverlay", class="overlay" style="display:none", onclick="this.style.display = 'none'">
     <div class="formContainer" onclick="event.stopPropagation();">
         <form id="deleteForm" method="POST" action="{% url 'delete' %}">
             {% csrf_token %}
@@ -218,6 +234,10 @@
     </div>
 </div>
 
+<div id="imageOverlay" class="overlay" style="display:none" onclick="this.style.display = 'none'">
+
+    <img src="" style="max-width: auto; max-height:auto; "/>
+</div>
 
 
 {{ text }}
