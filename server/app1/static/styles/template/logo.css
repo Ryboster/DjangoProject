@@ -1,5 +1,5 @@
 .logo {
-width: 5vw;
-height: 5vh;
+width: calc(7vw);
+height: calc(7vh);
 position: fixed;
 }
