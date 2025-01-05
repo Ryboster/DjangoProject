@@ -1,10 +1,14 @@
 {% extends 'app1/pages/blank.html' %}
+{% load custom_filters %}
+
 
 {% load static %}
 
 {% block styles %}
 <link rel="stylesheet" href="{% static 'styles/blog/buttons.css' %}">
 <link rel="stylesheet" href="{% static 'styles/blog/sidebar.css' %}">
+<link rel="stylesheet" href="{% static 'styles/blog/editFormOverlay.css' %}">
+<link rel="stylesheet" href="{% static 'styles/blog/textContent.css' %}">
 
 
 <button class="Button" onclick="toggleDeletePostForm(this)">
@@ -24,59 +28,48 @@
 {% endblock styles %}
 
 
-
-
 {% block textContent %}
 
-    <div id="Title">
-        <h1 style="display:inline-flex;"> 
-            {{ Title }}
+    <div id="Title" style="display:inline-flex;">
+        <h1 id="content" class="content">{{ Title|trim }}</h1>
 
-            <div class="adminButtonsContainer">
-                <button class="Button" onclick="toggleEditForm(this)">
-                    <img style="padding:0" src="{% static 'assets/icons/edit_icon.svg' %}" >
-                </button>
-                <button class="Button" onclick="toggleDeleteForm(this)">
-                    <img style="padding:0" src="{% static 'assets/icons/trash_icon1.svg' %}" >
-                </button>
-            </div>
-
-        </h1>
+        <div class="adminButtonsContainer">
+            <button class="Button" onclick="OpenEditOverlay(this)">
+                <img style="padding:0" src="{% static 'assets/icons/edit_icon.svg' %}" >
+            </button>
+            <button class="Button" onclick="toggleDeleteForm(this)">
+                <img style="padding:0" src="{% static 'assets/icons/trash_icon1.svg' %}" >
+            </button>
+        </div>
     </div>
 
     
-    <div id="Rating">
-        <h3 style="display:inline-flex;">
-            {{ Rating }} / 5
+    <div id="Rating" style="display:inline-flex;">
+        <h3 id="content" class="content">{{ Rating|trim }} / 5</h3>
 
-            <div class="adminButtonsContainer">
-                <button class="Button" onclick="toggleEditForm(this)">
-                    <img style="padding:0" src="{% static 'assets/icons/edit_icon.svg' %}" >
-                </button>
-                <button class="Button" onclick="toggleDeleteForm(this)">
-                    <img style="padding:0" src="{% static 'assets/icons/trash_icon1.svg' %}" >
-                </button>
-            </div>
-
-        </h3>
+        <div class="adminButtonsContainer">
+            <button class="Button" onclick="OpenEditOverlay(this)">
+                <img style="padding:0" src="{% static 'assets/icons/edit_icon.svg' %}" >
+            </button>
+            <button class="Button" onclick="toggleDeleteForm(this)">
+                <img style="padding:0" src="{% static 'assets/icons/trash_icon1.svg' %}" >
+            </button>
+        </div>
     </div>
 
 
-    <p> {{ Pictures }} </p>
+    <p>{{ Pictures|trim }}</p>
     
-    <div id="Paragraph">
-        <div style="display:flex; justify-content: center;"> 
-            {{ Paragraph }}
+    <div id="Paragraph" style="display:flex; justify-content: center;">
+        <div id="content" class="content"> {{ Paragraph|trim }}</div>
 
-            <div class="adminButtonsContainer">
-                <button class="Button" onclick="toggleEditForm(this)">
-                    <img style="padding:0" src="{% static 'assets/icons/edit_icon.svg' %}" >
-                </button>
-                <button class="Button" onclick="toggleDeleteForm(this)">
-                    <img style="padding:0" src="{% static 'assets/icons/trash_icon1.svg' %}" >
-                </button>
-            </div>
-
+        <div class="adminButtonsContainer">
+            <button class="Button" onclick="OpenEditOverlay(this)">
+                <img style="padding:0" src="{% static 'assets/icons/edit_icon.svg' %}" >
+            </button>
+            <button class="Button" onclick="toggleDeleteForm(this)">
+                <img style="padding:0" src="{% static 'assets/icons/trash_icon1.svg' %}" >
+            </button>
         </div>
     </div>
 
@@ -92,24 +85,56 @@
 
 
 <script>
-    function toggleEditForm(button) {
-        var form = document.getElementById('editForm');
+
+    function OpenEditOverlay(button) {
+
+        var form = document.getElementById('editFormOverlay');
 
         var table = "Blog";
-        var column = button.closest("div").parentElement.parentElement.id;
+        var column = button.closest("div").parentElement.id;
         var ID = "{{ ID|escapejs }}";
+        var currentValue = button.closest("div").parentElement.querySelector("#content").textContent;
 
+
+        if (column === "Paragraph") {
+            form.querySelector('input[name="new_value"]').disabled = true;
+            form.querySelector('input[name="new_value"]').style.display = "none";
+
+            textarea = form.querySelector('textarea[name="new_value"]')
+
+            
+            textarea.style.display = '';
+            textarea.style.resize = "none";
+            textarea.style.width = '100%';
+            textarea.style.minHeight = "200px";
+            
+            textarea.disabled = false;
+
+            textarea.value = currentValue;
+            textarea.style.height = '';
+            textarea.style.height = textarea.scrollHeight + 'px';
+
+        } else {
+            form.querySelector('input[name="new_value"]').disabled = false;
+            form.querySelector('input[name="new_value"]').style.display = "";
+            
+            form.querySelector('textarea[name="new_value"]').style.display = 'none';
+            form.querySelector('textarea[name="new_value"]').disabled = true;
+
+            form.querySelector('input[name="new_value"]').value = currentValue;
+        }
+
+        
         form.querySelector('input[name="table"]').value = table;
         form.querySelector('input[name="column"]').value = column;
         form.querySelector('input[name="ID"]').value = ID;
-
+        
 
         if (form.style.display === 'none' || form.style.display === '') {
-            form.style.display = 'block';
-        } else {
-            form.style.display = 'none';
+            form.style.display = '';
         }
     }
+
 
     function toggleDeleteForm(button) {
         var form = document.getElementById("deleteForm");
@@ -158,35 +183,43 @@
             form.style.display = 'none';
         }
     }
+
 </script>
         
+<!-- Edit Form -->
+<div id="editFormOverlay", class="formOverlay" style="display:none", onclick="this.style.display = 'none'">
+    <div class="formContainer" onclick="event.stopPropagation();">
+        <form  id="editForm" method="POST" action="{% url 'update' %}">
+            {% csrf_token %}
+            <input type="text" name="new_value" required style="margin-top:0;">
+            <textarea oninput="this.style.height = '';this.style.height = this.scrollHeight + 'px'" type="text" name="new_value" disabled required style="display:none;"></textarea>
 
+            <input type="hidden" name="ID" value="">
+            <input type="hidden" name="table" value="">
+            <input type="hidden" name="column" value="">
 
-<div id="editForm" style="display: none;">
-    <form method="POST" action="{% url 'update' %}">
-        {% csrf_token %}
-        <input type="text" name="new_value" placeholder="Enter new title" required style="margin-top:0;">
-        
-        <input type="hidden" name="ID" value="">
-        <input type="hidden" name="table" value="">
-        <input type="hidden" name="column" value="">
-
-        <button type="submit">Confirm</button>
-    </form>
+            <button type="submit">Confirm</button>
+        </form>
+    </div>
 </div>
 
-<div id="deleteForm" style="display:none">
-    <form method="POST" action="{% url 'delete' %}">
-        {% csrf_token %}
-        
-        <input type="hidden" name="ID" value="">
-        <input type="hidden" name="table" value="">
-        <input type="hidden" name="column" value="">
 
-        <button type="submit">Confirm</button>
-    </form>
+<!-- Truncate Content Form -->
+<div id="deleteFormOverlay", class="formOverlay" style="display:none", onclick="this.style.display = 'none'">
+    <div class="formContainer">
+        <div id="deleteForm" style="display:none">
+            <form method="POST" action="{% url 'delete' %}">
+                {% csrf_token %}
+
+                <input type="hidden" name="ID" value="">
+                <input type="hidden" name="table" value="">
+                <input type="hidden" name="column" value="">
+            
+                <button type="submit">Confirm</button>
+            </form>
+        </div>
+    </div>
 </div>
-
 
 
 
