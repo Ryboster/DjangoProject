@@ -2,7 +2,10 @@
 .adminButtonsContainer {
     padding-left: 24px;
     display: flex;
+    margin-right: auto;
     flex-direction: column;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .adminButtonsContainer .Button {
@@ -13,4 +16,5 @@
     height: auto; 
     align-items: center; 
     justify-content: center;
+
 }
