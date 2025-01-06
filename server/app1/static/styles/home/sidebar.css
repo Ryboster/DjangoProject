@@ -1,13 +1,4 @@
 /* The entire container */
-.sidebar {
-    background-color: #383836;
-    width:calc(15vw);
-    height:auto;
-    float: right;
-    padding-top: 2vh;
-    padding-bottom: calc(2vh);
-}
-
 
 /* Selife */
 .self_photo {
@@ -21,10 +12,6 @@
     text-align: center;
     padding-bottom: 2vh;
 }
-
-
-
-
 
 /* Socials */
 .socials {
@@ -65,11 +52,6 @@
     float: right;
     text-align: right;
 }
-
-
-
-
-
 
 /* Core skills section */
 .coreSkillsSection {

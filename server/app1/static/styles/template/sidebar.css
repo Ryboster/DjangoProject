@@ -1,0 +1,36 @@
+.sidebar {
+    background-color: inherit;
+    width:calc(15vw);
+    height:auto;
+    float: right;
+    padding-top: 2vh;
+    padding-bottom: calc(2vh);
+    display: flex;
+    flex-direction: row;
+    margin-left:auto;
+}
+
+.sidebar .foldButton {
+    margin-left: auto;
+    height: 10%;
+    color: inherit;
+    background-color: #383836;
+    border:none;
+}
+.sidebar .foldButton:hover {
+    background-color: #38383675
+}
+
+.sidebarContainer {
+    padding-right: 1vw;
+    display: flex;
+    flex-direction: column;
+    background-color: #383836; 
+    height: auto; 
+    width:100%;
+    margin-left: auto;
+}
+
+.sidebarContainer .header {
+    padding-left: 4%;
+}

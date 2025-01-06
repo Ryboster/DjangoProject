@@ -51,13 +51,13 @@
     </div>
 
 
-    <div id="Pictures" style="display:flex; flex-direction:row; margin-left: auto;margin-right: auto;">
+    <div id="Pictures" class="Pictures" style="">
         <div id="Images" style="display:flex; flex-direction:row; margin-left: auto;margin-right: auto;">
 
             <button onclick="previousImage()" id="previousImageButton"> < </button>
-            <img onclick="selectImage(this)" src="{% static '/assets/placeholder.png' %}" id="secondaryContainerLeft" style="max-width:300px; max-height:300px;"/>
-            <img onclick="selectImage(this)" src="{% static '/assets/placeholder.png' %}" id="primaryContainer" style="max-width: 500px; max-height: 500px;"/> 
-            <img onclick="selectImage(this)" src="{% static '/assets/placeholder.png' %}" id="secondaryContainerRight" style="max-width:300px; max-height:300px;"/>
+            <img onclick="selectImage(this)" src="{% static '/assets/placeholder.png' %}" id="secondaryContainerLeft" class="secondaryContainerLeft" />
+            <img onclick="selectImage(this)" src="{% static '/assets/placeholder.png' %}" id="primaryContainer" class="primaryContainer"/> 
+            <img onclick="selectImage(this)" src="{% static '/assets/placeholder.png' %}" id="secondaryContainerRight" class="secondaryContainerRight"/>
             <button onclick="nextImage()" id="nextImageButton"> > </button>
         </div>
 
@@ -196,7 +196,7 @@
 {% endblock %}
 
 {% block sidebarContent %}
-    <div class="sidebarContainer">
+    
 
         <h3 class="header">Content</h3>
 
@@ -228,6 +228,6 @@
                 <button type="submit">Confirm</button>
             </form>
         </div>
-    </div>
+    
 
 {% endblock %}

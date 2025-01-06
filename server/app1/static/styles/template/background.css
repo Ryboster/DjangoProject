@@ -1,6 +1,6 @@
 /* Background */
 .background {
     height: calc(100vh);
-    width:calc(8vw);
+    width:8%;
     background-color:#CCCCCC;
 }
