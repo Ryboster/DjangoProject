@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app1',
+    'markdownify',
 ]
 
 MIDDLEWARE = [
@@ -75,12 +77,28 @@ WSGI_APPLICATION = 'serv1.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': {'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': BASE_DIR / 'db.sqlite3'}
 }
 
+MARKDOWNIFY = { 
+    "default": {"WHITELIST_TAGS": [
+        "html", "head", "body", "title", "base", "link", "meta", "style", 
+        "p", "h1", "h2", "h3", "h4", "h5", "h6", "blockquote", "hr", "pre",
+        "a", "b", "i", "u", "strong", "em", "small", "sub", "sup", "mark", "span", "br", "wbr",
+        "img", "audio", "video", "source", "track", "map", "area",
+        "iframe", "embed", "object", "param", "picture", "canvas", "svg", "math",
+        "script", "noscript", "template", "slot",
+        "form", "input", "textarea", "button", "select", "datalist", "optgroup", "option", "label", "fieldset", "legend", "output", "progress", "meter",
+        "table", "caption", "thead", "tbody", "tfoot", "tr", "td", "th", "col", "colgroup",
+        "ul", "ol", "li", "dl", "dt", "dd",
+        "article", "section", "nav", "aside", "header", "footer", "main", "figure", "figcaption", "div",
+        "details", "summary", "dialog",
+        "slot", "template",
+    ]}
+}
+
+MARKDOWNIFY_STRIP = False
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

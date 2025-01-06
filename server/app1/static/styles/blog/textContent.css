@@ -1,4 +1,10 @@
-.content {
+.Title .content {
     margin-left: auto;
+}
+.Rating .content {
+    margin-left: auto;
+}
 
+.Paragraph .content {
+    margin-right: auto;
 }

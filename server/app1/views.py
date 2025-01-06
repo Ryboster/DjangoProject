@@ -6,9 +6,8 @@ from bs4 import BeautifulSoup
 import os
 import sqlite3
 from django import template
-
-
 from CRUD import CRUD
+
 
 class Pages:
     def __init__(self):
@@ -31,9 +30,10 @@ class Pages:
 
     def blog(self, request, post_id='test'):
         pageFile = os.path.join(self.rootdir, "blog.html")
+        markdown_string = """# Dark Souls 1"""
 
         self.Database.Create(table="Blog", columns=("ID", "Title", "Pictures", "Paragraph", "Rating",),
-                                     values=("test", "Test Title", json.dumps(list(["ds1.png"])), "<p> Test Paragraph </p>", 0.5,))
+                                     values=("test", "Test Title", json.dumps(list(["ds1.png"])), markdown_string, 0.5,))
 
         _id = self.Database.Read("Blog", "ID", post_id)
         title = self.Database.Read("Blog", "Title", post_id)

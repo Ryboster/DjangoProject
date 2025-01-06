@@ -1,8 +1,10 @@
 {% extends 'app1/pages/blank.html' %}
 {% load custom_filters %}
+{% load markdownify %}
 
 
 {% load static %}
+
 
 {% block styles %}
 <link rel="stylesheet" href="{% static 'styles/blog/buttons.css' %}">
@@ -21,7 +23,7 @@
 
 {% block textContent %}
 
-    <div id="Title" style="display:inline-flex;">
+    <div id="Title" class='Title' style="display:inline-flex;">
         <h1 id="content" class="content">{{ Title|trim }}</h1>
 
         <div class="adminButtonsContainer">
@@ -35,7 +37,7 @@
     </div>
 
     
-    <div id="Rating" style="display:inline-flex;">
+    <div id="Rating" class="Rating" style="display:inline-flex;">
         <h3 id="content" class="content">{{ Rating|trim }} / 5</h3>
 
         <div class="adminButtonsContainer">
@@ -72,8 +74,10 @@
         </div>
     </div>
     
-    <div id="Paragraph" style="padding-top: 48px; display:flex; justify-content: center;">
-        <div id="content" class="content"> {{ Paragraph|trim }}</div>
+    
+    <div id="Paragraph" class="Paragraph" style="padding-top: 48px; display:flex; justify-content: center;">
+
+        <div id="content" class="content"> {{ Paragraph|markdownify|linebreaksbr }} </div>
 
         <div class="adminButtonsContainer">
             <button class="Button" onclick="OpenEditOverlay(this)">
