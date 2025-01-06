@@ -11,20 +11,11 @@
 <link rel="stylesheet" href="{% static 'styles/blog/textContent.css' %}">
 
 
-<button class="Button" onclick="toggleDeletePostForm()">
+<button class="Button" onclick="openDeletePostForm()">
     <img style="padding:0" src="{% static 'assets/icons/trash_icon1.svg' %}" >
 </button>
 
-<div id="deletePostForm" style="display:none">
-    <form method="POST" action="{% url 'delete_post' %}">
-        {% csrf_token %}
-        
-        <input type="hidden" name="ID" value="">
-        <input type="hidden" name="table" value="">
 
-        <button type="submit">Confirm</button>
-    </form>
-</div>
 {% endblock styles %}
 
 
@@ -62,9 +53,9 @@
         <div id="Images" style="display:flex; flex-direction:row; margin-left: auto;margin-right: auto;">
 
             <button onclick="previousImage()" id="previousImageButton"> < </button>
-            <img onclick="selectImage(this)" src="{% static 'assets/furi.png' %}" id="secondaryContainerLeft" style="max-width:300px; max-height:300px;"/>
-            <img onclick="selectImage(this)" src="{% static 'assets/scattered_lands.png' %}" id="primaryContainer" style="max-width: 500px; max-height: 500px;"/> 
-            <img onclick="selectImage(this)" src="{% static 'assets/ds1.png' %}" id="secondaryContainerRight" style="max-width:300px; max-height:300px;"/>
+            <img onclick="selectImage(this)" src="{% static '/assets/placeholder.png' %}" id="secondaryContainerLeft" style="max-width:300px; max-height:300px;"/>
+            <img onclick="selectImage(this)" src="{% static '/assets/placeholder.png' %}" id="primaryContainer" style="max-width: 500px; max-height: 500px;"/> 
+            <img onclick="selectImage(this)" src="{% static '/assets/placeholder.png' %}" id="secondaryContainerRight" style="max-width:300px; max-height:300px;"/>
             <button onclick="nextImage()" id="nextImageButton"> > </button>
         </div>
 
@@ -80,11 +71,8 @@
             </button>
         </div>
     </div>
-
-    <p>{{ Pictures|trim }} <br></p>
-
     
-    <div id="Paragraph" style="display:flex; justify-content: center;">
+    <div id="Paragraph" style="padding-top: 48px; display:flex; justify-content: center;">
         <div id="content" class="content"> {{ Paragraph|trim }}</div>
 
         <div class="adminButtonsContainer">
@@ -107,7 +95,23 @@
     document.addEventListener("DOMContentLoaded", function () {
         var textContainerTag = document.getElementsByClassName("textContainer")[0];
         textContainerTag.id = "{{ ID|escapejs }}";
-    });
+        var staticBase = "{{ static }}";
+
+        var images = JSON.parse(document.getElementById('imagesList').textContent);
+        if (images != null)
+        {
+            var children = document.getElementById("Images").querySelectorAll("img");
+
+            for (let i = 0; i < images.length; i++ )
+            {
+                children[i].src = "{% static '/assets/' %}" + images[i];
+                if (i === 2)
+                {
+                    break;
+                }
+            }
+        }
+    })
 </script>
 
 
@@ -159,6 +163,18 @@
             <input type="hidden" name="ID" value="">
             <input type="hidden" name="table" value="">
             <input type="hidden" name="column" value="">
+        
+            <button type="submit">Confirm</button>
+        </form>
+    </div>
+</div>
+
+<div id="deletePostOverlay", class="overlay" style="display:none", onclick="this.style.display = 'none'">
+    <div class="formContainer" onclick="event.stopPropagation();">
+        <form id="deletePostForm" method="POST" action="{% url 'delete_post' %}">
+            {% csrf_token %}
+            <input type="hidden" name="ID" value="">
+            <input type="hidden" name="table" value="">
         
             <button type="submit">Confirm</button>
         </form>

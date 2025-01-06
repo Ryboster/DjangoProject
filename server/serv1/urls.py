@@ -30,7 +30,7 @@ urlpatterns = [
     path('update/', views.DatabaseAPI.update, name='update'),
     path('delete/', views.DatabaseAPI.delete, name='delete'),
     
-    path('create_post/', views.DatabaseAPI.create, name="create_post"),
+    path('create_post/', views.DatabaseAPI.createPost, name="create_post"),
     path('delete_post/', views.DatabaseAPI.deletePost, name='delete_post'),
 
     path('add_picture/', views.DatabaseAPI.addPicture, name="add_picture"),

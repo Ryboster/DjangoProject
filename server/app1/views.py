@@ -33,7 +33,7 @@ class Pages:
         pageFile = os.path.join(self.rootdir, "blog.html")
 
         self.Database.Create(table="Blog", columns=("ID", "Title", "Pictures", "Paragraph", "Rating",),
-                                     values=("test", "Test Title", json.dumps(list(["Test Pictures"])), "<p> Test Paragraph </p>", 0.5,))
+                                     values=("test", "Test Title", json.dumps(list(["ds1.png"])), "<p> Test Paragraph </p>", 0.5,))
 
         _id = self.Database.Read("Blog", "ID", post_id)
         title = self.Database.Read("Blog", "Title", post_id)
@@ -113,7 +113,6 @@ class CRUD_Endpoints():
         if request.method == 'POST':
             
             submitted_values = request.POST
-            print(submitted_values)
 
             if submitted_values['new_value'] == "":
                 intKey = 0
@@ -121,7 +120,8 @@ class CRUD_Endpoints():
 
                 while True:
                     try:
-                        pictures.append(submitted_values[f'{intKey}'])
+                        if submitted_values[f"{intKey}"]:
+                            pictures.append(submitted_values[f'{intKey}'])
                         intKey += 1
                     except:
                         break
@@ -157,7 +157,7 @@ class CRUD_Endpoints():
         if referer:
             return HttpResponseRedirect(referer)
 
-    def create(self, request):
+    def createPost(self, request):
         if request.method == 'POST':
             submitted_values = request.POST
             
