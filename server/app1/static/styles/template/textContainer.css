@@ -1,7 +1,7 @@
 .textContainer 
 {
-padding-left: 9vw;
-width: 75vw;
+padding-left: calc(4vw);
+width: calc(75vw);
 display:inline-flex;
 flex-direction: column;
 text-align: center;
