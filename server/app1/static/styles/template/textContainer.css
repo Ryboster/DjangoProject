@@ -15,16 +15,25 @@ text-align: center;
 }
 
 .Pictures .secondaryContainerLeft {
-    max-width:28%;
-    max-height:300px;
+    width: 27%;
+    height:80%;
+
 }
 
 .Pictures .primaryContainer {
-    max-width: 28%;
-    max-height: 500px;
+    width: 28%;
+    height: 100%;
 }
 
 .Pictures .secondaryContainerRight {
-    max-width:28%;
-    max-height:300px;
+    width:27%;
+    height:80%;
+}
+
+.Images {
+
+    display:flex; 
+    flex-direction:row; 
+    margin-left: auto;
+    margin-right: auto;
 }
