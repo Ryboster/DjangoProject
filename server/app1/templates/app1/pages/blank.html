@@ -66,60 +66,59 @@
     
     <!-- Body -->
     <body id="body" class="body">
-
         <!-- Second background -->
         <div class="columns">
-
             <div id="background" class="background"> </div>
-
-            <div class="textContainer">
+            <div id="textContainer" class="textContainer">
                 {% block textContent %}
-
                 {% endblock %}
             </div>
+
             <div id="sidebar" class="sidebar">
                 <button id="foldButton" class="foldButton" onclick="toggleFold()"> 
                     >
                 </button>
+
                 <div id="sidebarContainer" class="sidebarContainer">
                     
                     {% block sidebarContent %}
-
                     {% endblock %}
-                </div>
-                
-                
+
+                </div>    
             </div>
         </div>
-        
     </body>
 
     <!-- Footer -->
-    <footer class="footer">
-        <script src="{% static 'js/template/verticalView.js' %}" type="text/javascript">
-        </script>
-        <script src="{% static 'js/template/sidebarButton.js' %}" type="text/javascript"></script>
+    <footer id="footer" class="footer">
+        
 
-        <script type="text/javascript">
-            isVertical();
-        </script>
-
-    <div id="footer" class="footerContent">
         All mine circa 2024
 
-        <!-- Load stylesheets -->
-        <link rel="stylesheet" href="{% static 'styles/template/navbar.css' %}">
-        <link rel="stylesheet" href="{% static 'styles/template/footer.css' %}">
-        <link rel="stylesheet" href="{% static 'styles/template/background.css' %}">
-        <link rel="stylesheet" href="{% static 'styles/template/body.css' %}">
-        <link rel="stylesheet" href="{% static 'styles/template/textContainer.css' %}">
-        <link rel="stylesheet" href="{% static 'styles/template/columns.css' %}">
-        <link rel="stylesheet" href="{% static 'styles/template/sidebar.css' %}">
+        
+        
         {% block styles %}
 
         {% endblock styles %}
-    </div>
-    
-</footer>
+
+        
+    </footer>
+
+    <!-- Load stylesheets -->
+    <link rel="stylesheet" href="{% static 'styles/template/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/template/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/template/background.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/template/body.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/template/textContainer.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/template/columns.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/template/sidebar.css' %}">
+
+    <script src="{% static 'js/template/verticalView.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/template/sidebarButton.js' %}" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        isVertical();
+    </script>
+
 </html>
 

@@ -2,6 +2,7 @@
     background-color: #4dbedf;
     position: fixed;
     bottom: 0;
-    width: 97vw;
-    height: calc(4vh)
+    width: 100%;
+    height: calc(3vh);
+    margin-top: auto;
 }

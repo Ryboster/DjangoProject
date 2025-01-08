@@ -124,7 +124,7 @@ function nextImage()
         }
     }
 
-
+/////////////////////////////////////////
 
     function selectImage(image)
     {
@@ -139,7 +139,7 @@ function nextImage()
 
         var table = "Blog";
         var column = button.closest("div").parentElement.id;
-        var ID = document.getElementsByClassName("textContainer")[0].id;
+        var ID = document.getElementsByClassName("textContainer")[0].dataset.recordId;
 
         form.style.display = '';
 
@@ -155,7 +155,7 @@ function nextImage()
 
         var table = "Blog";
         var column = button.closest("div").parentElement.id;
-        var ID = document.getElementsByClassName("textContainer")[0].id;
+        var ID = document.getElementsByClassName("textContainer")[0].dataset.recordId;
         
 
         if (column === "Paragraph") {
@@ -240,7 +240,7 @@ function nextImage()
 
         var table = "Blog";
         var column = button.closest("div").parentElement.id;
-        var ID = document.getElementsByClassName("textContainer")[0].id;
+        var ID = document.getElementsByClassName("textContainer")[0].dataset.recordId;
 
         form.querySelector('input[name="table"]').value = table;
         form.querySelector('input[name="column"]').value = column;
@@ -257,7 +257,7 @@ function nextImage()
         var form = document.getElementById("deletePostOverlay");
 
         var table = "Blog";
-        var ID = document.getElementsByClassName("textContainer")[0].id;
+        var ID = document.getElementsByClassName("textContainer")[0].dataset.recordId;
         
         form.querySelector('input[name="ID"]').value = ID;
         form.querySelector('input[name="table"]').value = table;

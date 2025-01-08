@@ -20,7 +20,8 @@ function isVertical()
 	if (clientHeight > clientWidth)
 	{
 		sidebar = document.getElementById("sidebar");
-		sidebar.style.width = "50vw";
+		sidebar.style.width = "45%";
+
 		//sidebarContainer = document.getElementById("sidebarContainer");
 		//sidebarContainer.style.width = "30vw";
 
@@ -69,12 +70,13 @@ function isVertical()
 		dropDownIcon = document.createElement("img")
 		dropDownIcon.src = "/static/assets/icons/dropDownMenu.svg";
 
-		dropDownMenuButton.style.width = "10%";
+		dropDownMenuButton.style.marginRight = "auto";
+		dropDownMenuButton.style.width = "8vw";
 		dropDownMenuButton.style.height = "100%";
 
 		dropDownMenuButton.appendChild(dropDownIcon);
-		dropDownIcon.style.width = "100%";
-		dropDownIcon.style.height = "100%";
+		dropDownIcon.style.width = "80%";
+		dropDownIcon.style.height = "80%";
 
 		document.getElementById("navbar").appendChild(dropDownMenuButton);
 		document.getElementById("background").appendChild(dropDownMenu);

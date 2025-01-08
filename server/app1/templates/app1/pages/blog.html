@@ -98,7 +98,9 @@
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function () {
         var textContainerTag = document.getElementsByClassName("textContainer")[0];
-        textContainerTag.id = "{{ ID|escapejs }}";
+        //textContainerTag.id = "{{ ID|escapejs }}";
+        textContainerTag.setAttribute("data-record-id", "{{ ID|escapejs }}")
+        textContainerTag.data
         var staticBase = "{{ static }}";
 
         var images = JSON.parse(document.getElementById('imagesList').textContent);
