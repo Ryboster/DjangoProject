@@ -2,29 +2,29 @@
 
 /* Selife */
 .self_photo {
-    width:calc(13vw);
-    
+    width:95%;
+    padding-top:5%;
     text-align: center;
 }
 
 /* Selfie Divider*/
 .handsomeManContainer {
     text-align: center;
-    padding-bottom: 2vh;
+    padding-bottom: 5%;
 }
 
 /* Socials */
 .socials {
-    width: calc(13vw);
-    padding-left: 1vw;
-    padding-right: 1vw;
+    width: 100%;
+    padding-bottom: 5%;
+    padding-top: 2%;
 }
 
 /* Icon and text wrappers */
 .socials div {
     display:flex;
-    height:calc(4vh);
-    padding-top: calc(1vh);
+    height:42px;
+    padding-top: 2%;
     overflow: hidden;
 }
 .socials div:hover {
@@ -33,53 +33,49 @@
 
 /* Socials - Icons */
 .socials img {
-    width: calc(2vw);
-    height: calc(2vw);
-    float: left;
-    padding-left: 5px;
-    flex:0;
-    margin-right:calc(2vw)
+    width: 36px;
+    height: 36px;
+
+    margin-right: auto;
+    padding-left: 4%;
 }
 
 /* Socials - Plain text */
 .socials p {
     font-size: 8pt;
-    padding-right: 1vw;
     white-space: nowrap;
-    flex: 1;
-    color: #CCCCCC;
     text-overflow: ellipsis;
-    float: right;
-    text-align: right;
+
+    margin-left: auto;
+    padding-right: 4%;
+
+    color: #CCCCCC;
 }
 
 /* Core skills section */
-.coreSkillsSection {
+.skills {
     display: block;
-    padding-left: calc(1vw);
-    padding-right: calc(1vw);
-    width: calc(13vw);
+
+    width: 100%;
     text-align: left;
     justify-content: center;
-    
-}
-.coreSkillsSection p {
-color: #CCCCCC;
 }
 
-.coreSkill {
-    max-width: calc(4vw);
+
+.skills .skillDivider {
+    margin-right: auto;
+    float: left;
+    width: 90%;
 }
 
-.skillDivider {
-    width: calc(2vw);
-}
-
-.skillItem {
+.skills .skillItem {
     width: 100%;
     display: flex;
-    margin: 0 0;
-    color: #CCCCCC;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1%;
+    padding-bottom: 1%;
+
     font-size: 10pt;
 }
 
@@ -87,56 +83,69 @@ color: #CCCCCC;
     background-color: #9A9FA7;
 }
 
-.skillItem:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-}
+.skillBar {
 
-.skillProgressBar {
     display: flex;
-    position: absolute;
-    right: calc(2vw);
-    width: calc(4vw);
+    width: 30%;
     background-color: #e0e0e0;
-    border-radius: 5%;
     overflow: hidden;
     height: 15px;
+    margin-left: auto;
+    margin-right: 0;
+
 }
 
-.skillFill {
+.skillBar .skillProgress {
     height: 100%;
     background-color: #9A9FA7;
 }
-.skillProgressBar i {
-    position: absolute;
-    right: 0%;
-    text-align: right;
-    font-size: 9pt;
-    color: black;
-}
 
-
-.tooltip {
-    visibility: hidden;
-    padding: 10px 10px;
-    background-color: #000000;
+.skills .skillCategoryCaption {
+    margin-bottom: 1%;
+    margin-top: 4%;
     color: #CCCCCC;
-    text-align: left;
-    border-radius: 5px;
-    position: absolute;
 
-    inline-size: 20%;
-    white-space: pre-wrap;
-    right: 16%;
-    opacity: 0;
 }
 
-.tooltip::before {
-    content: '';
-    position: absolute;
-    border:8px solid #383836;
-    border-width: 4px,4px, 4px, 0;
-    border-color: transparent transparent transparent #383836;
-    right: -14px;
-    top: 0%;
+.skills .editSkillItemButton {
+    margin-left: auto;
+}
+
+.skills .skillItem .skillItemCaption {
+    margin-right: auto;
+    align-self: center;
+    text-align: left;
+    padding-left: 5%;
+
+}
+
+.skills .skillCategoryContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.socials .socialContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.editItemButton {
+    display: flex;
+    width: 18px;
+    height: 18px;
+    align-self: center;
+    margin-left: auto;
+
+    align-items: center; 
+    justify-content: center;
+}
+
+.removeItemButton {
+    display: flex;
+    width: 18px;
+    height: 18px;
+    align-self: center;
+    
+    align-items: center; 
+    justify-content: center;
 }

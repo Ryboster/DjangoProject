@@ -1,6 +1,6 @@
 .sidebar {
     background-color: inherit;
-    width:calc(15vw);
+    width:15vw;
     height:auto;
     float: right;
     padding-top: 2vh;
@@ -12,7 +12,8 @@
 
 .sidebar .foldButton {
     margin-left: auto;
-    height: 10%;
+    height: 20%;
+    width:10%;
     color: inherit;
     background-color: #383836;
     border:none;
@@ -22,12 +23,11 @@
 }
 
 .sidebarContainer {
-    padding-right: 1vw;
     display: flex;
     flex-direction: column;
     background-color: #383836; 
     height: auto; 
-    width:100%;
+    width:90%;
     margin-left: auto;
 }
 

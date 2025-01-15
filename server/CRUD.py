@@ -9,27 +9,50 @@ DB_EXTENSION = ".sqlite3"
 DB = DB_NAME + DB_EXTENSION
 
 
-DB_HOME_INIT_QUERY = """
-CREATE TABLE IF NOT EXISTS Home 
-        (
-        ID INTEGER PRIMARY KEY AUTOINCREMENT,
-        TextContent TEXT TEXT CHECK(typeof(TextContent) = 'text' OR NULL),
-        CoreSkills TEXT CHECK(typeof(CoreSkills) = 'text' OR NULL), -- JSON AS TEXT
-        Languages  TEXT CHECK(typeof(Languages) = 'text' OR NULL), -- JSON AS TEXT
-        Frameworks TEXT CHECK(typeof(Frameworks) = 'text' OR NULL) -- JSON AS TEXT
-        )
-"""
+
+
 
 DB_BLOG_INIT_QUERY = """
 CREATE TABLE IF NOT EXISTS Blog
     (
-    ID STRING UNIQUE CHECK(typeof(ID) = 'text' OR NULL),
-    Title STRING CHECK(typeof(Title) = 'text' OR NULL),
-    Pictures STRING CHECK(typeof(Pictures) = 'text' OR NULL),
-    Paragraph STRING CHECK(typeof(Paragraph) = 'text' OR NULL),
+    ID TEXT UNIQUE CHECK(typeof(ID) = 'text' OR NULL),
+    Title TEXT CHECK(typeof(Title) = 'text' OR NULL),
+    Pictures TEXT CHECK(typeof(Pictures) = 'text' OR NULL),
+    Paragraph TEXT CHECK(typeof(Paragraph) = 'text' OR NULL),
     Rating REAL CHECK(typeof(Rating) = 'real' OR NULL)
     )
 """
+
+
+DB_HOME_INIT_QUERY = """
+CREATE TABLE IF NOT EXISTS Home 
+        (        
+        ID INTEGER UNIQUE CHECK(typeof(ID) = 'integer' OR NULL),
+        TextContent TEXT CHECK(typeof(TextContent) = 'text' OR NULL),
+        Picture  TEXT CHECK(typeof(Picture) = 'text' OR NULL)
+        )
+"""
+
+DB_SOCIALS_INIT_QUERY = """
+CREATE TABLE IF NOT EXISTS Socials
+    (
+    ID TEXT UNIQUE CHECK(typeof(ID) = 'text' OR NULL),
+    DATA TEXT CHECK(typeof(DATA) = 'text' OR NULL)
+    )
+"""
+
+DB_SKILLS_INIT_QUERY = """
+CREATE TABLE IF NOT EXISTS Skills
+    (
+    ID TEXT UNIQUE CHECK(typeof(ID) = 'text' OR NULL),
+    DATA TEXT CHECK(typeof(DATA) = 'text' OR NULL)    
+    )
+"""
+
+
+DB_INIT_QUERIES = [DB_BLOG_INIT_QUERY, DB_HOME_INIT_QUERY,
+                 DB_SOCIALS_INIT_QUERY, DB_SKILLS_INIT_QUERY]
+
 class CRUD:
 
     def __init__(self):
@@ -45,8 +68,10 @@ class CRUD:
     def InitializeDatabase(self):
         ''' Initialize tables inside the database '''
         self.openConnection()
-        self.cursor.execute(DB_HOME_INIT_QUERY)
-        self.cursor.execute(DB_BLOG_INIT_QUERY)
+
+        for DB_INIT_QUERY in DB_INIT_QUERIES:
+            self.cursor.execute(DB_INIT_QUERY)
+
         self.closeConnection()
         
     def openConnection(self):

@@ -18,11 +18,45 @@ class Pages:
         pass
 
     def home(self, request):
+        self.Database.Create("Home", columns=("ID", "TextContent", "Picture", ), values=(0, "# Title", "handsome_man.png",))
+        self.Database.Create("Socials", columns=("ID", "DATA",), values=("LinkedIn", json.dumps({"li.svg": "https://www.linkedin.com/"}),))
+        self.Database.Create("Skills", columns=("ID", "DATA",), values=("Languages", json.dumps({"Python": 99, "C#": 90, "JavaScript": 75, "HTML": 90}),))
+        self.Database.Create("Skills", columns=("ID", "DATA",), values=("Frameworks", json.dumps({"Django": 80, "ReactJS": 20, "Pygame": 95, "Unity": 100}),))
         pageFile = os.path.join(self.rootdir, "index.html")
+
+        textContent = self.Database.Read("Home", "TextContent", 0)
+        picture = self.Database.Read("Home", "Picture", 0)
+
+        skillsIds = self.Database.fetchAllIds("Skills")
+        socialsIds = self.Database.fetchAllIds("Socials")
+
+        skills = dict()
+        socials = dict()
+
+        if (len(skillsIds) > 0):
+            for skillsId in skillsIds:
+
+                skillsData = json.loads(self.Database.Read("Skills", "DATA", skillsId))
+                skills[skillsId] = skillsData
+                
+
+        if(len(socialsIds) > 0):
+            for socialsId in socialsIds:
+                socialsData = json.loads(self.Database.Read("Socials", "DATA", socialsId))
+                socials[socialsId] = socialsData
+                
+
+
         context = {
-        'variable1': 'Hello, Django!'
+        'variable1': 'Hello, Django!',
+        'skills': skills,
+        'socials': socials,
+        'textContent': textContent,
+        'picture': picture
         }
+
         return render(request, pageFile, context)
+
 
     def blank(self,request):
         pageFile = os.path.join(self.rootdir, "blank.html")
@@ -30,10 +64,6 @@ class Pages:
 
     def blog(self, request, post_id='test'):
         pageFile = os.path.join(self.rootdir, "blog.html")
-        markdown_string = """# Dark Souls 1"""
-
-        self.Database.Create(table="Blog", columns=("ID", "Title", "Pictures", "Paragraph", "Rating",),
-                                     values=("test", "Test Title", json.dumps(list(["ds1.png"])), markdown_string, 0.5,))
 
         _id = self.Database.Read("Blog", "ID", post_id)
         title = self.Database.Read("Blog", "Title", post_id)

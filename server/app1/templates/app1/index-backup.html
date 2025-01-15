@@ -1,0 +1,122 @@
+{% extends 'app1/pages/blank.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'styles/home/sidebar.css' %}">
+{% endblock styles %}
+
+{% block textContent %}
+<h1> {{ variable1 }} </h1>
+<p> lorem ipsum</p>
+{% endblock %}
+
+    {% block sidebarContent %}
+    <div class="handsomeManContainer">
+        <img src="{% static 'assets/handsome_man.png' %}" class="self_photo" /> <br />
+    </div>
+    <div class="socials">
+
+        <a href="https://www.linkedin.com/in/gracjan-blazejowski-97b935233/">
+            <div>
+                <img src="{% static 'assets/icons/li.svg' %}" />
+                <p>LinkedIn</p>
+            </div>
+        </a>
+
+        <a href="https://github.com/Ryboster">
+            <div>
+                <img src="{% static 'assets/icons/gh.svg' %}" />
+                <p>GitHub</p>
+            </div>
+        </a>
+
+        <a href="mailto:blazejowski.biz@gmail.com">
+            <div>
+                <img src="{% static 'assets/icons/em.png' %}" />
+                <p>Email</p>
+            </div>
+        </a> <br />
+    </div> 
+    <div class="coreSkillsSection">
+        <p> Core Skills</p>
+        <hr />
+
+        <div class="skillItem">
+            OOP 
+            <div class="tooltip">Skilled in Object-Oriented Programming with demonstrated application of SOLID principles in Python, C++, and JavaScript.</div>
+            <div class="skillProgressBar">
+                <div class="skillFill" style="width: 55%;"> </div>
+            </div>
+        </div>
+
+        <div class="skillItem">
+            CI/CD 
+            <div class="tooltip">Proficiency in Git workflow management and collaboration on GitHub platform.</div>
+            <div class="skillProgressBar">
+                <div class="skillFill" style="width: 25%;"></div>
+            </div>
+        </div>
+
+        <div class="skillItem">
+            OOAD 
+            <div class="tooltip">Well-versed in generating entity-relationship and workflow diagrams on Mural. Implementing common design patterns.</div>
+            <div class="skillProgressBar">
+                <div class="skillFill" style="width: 20%;"></div>
+            </div>
+        </div>
+
+        <p>Languages</p>
+        <hr />
+            <div class="skillItem">
+                Python 
+                <div class="tooltip">PYTHON</div>
+                <div class="skillProgressBar">
+                    <div class="skillFill" style="width: 75%;"></div>
+                </div>
+            </div>
+
+            <div class="skillItem">
+                Java 
+                <div class="tooltip">PYTHON</div>
+                <div class="skillProgressBar">
+                    <div class="skillFill" style="width: 7.5%;"></div>
+                </div>
+            </div>
+
+            <div class="skillItem">
+                HTML 
+                <div class="tooltip">PYTHON</div>
+                <div class="skillProgressBar">
+                    <div class="skillFill" style="width: 7.5%;"></div>
+                </div>
+            </div>
+
+            <div class="skillItem">
+                CSS 
+                <div class="tooltip">PYTHON</div>
+                <div class="skillProgressBar">
+                    <div class="skillFill" style="width: 5%;"></div>
+                </div>
+            </div>
+
+            <div class="skillItem">
+                JavaScript 
+                <div class="tooltip">PYTHON</div>
+                <div class="skillProgressBar">
+                    <div class="skillFill" style="width: 5%;"></div>
+
+            </div>
+        </div>
+
+        <p>Frameworks</p>
+        <hr />
+        <div class="skillItem">
+            Django 
+            <div class="tooltip">PYTHON</div>
+            <div class="skillProgressBar">
+                <div class="skillFill" style="width: 5%;"></div>
+        </div>
+
+    </div>
+    {% endblock sidebarContent %}
+

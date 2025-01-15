@@ -2,7 +2,7 @@
 <html style="display: block">
 
     <!-- Initialization -->
-    <head>
+    <head id="head">
 
         <!-- Load static content -->
         {% load static %}
@@ -113,8 +113,8 @@
     <link rel="stylesheet" href="{% static 'styles/template/columns.css' %}">
     <link rel="stylesheet" href="{% static 'styles/template/sidebar.css' %}">
 
-    <script src="{% static 'js/template/verticalView.js' %}" type="text/javascript"></script>
     <script src="{% static 'js/template/sidebarButton.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/template/verticalView.js' %}" type="text/javascript"></script>
 
     <script type="text/javascript">
         isVertical();
